@@ -1,0 +1,13 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  width: 100%;
+  overflow-y: hidden;
+  background: #f1f4f7;
+  /* fallback for old browsers */
+/*  background: url(../../img/default-bg.jpg) no-repeat center center fixed;*/
+  /* Chrome 10-25, Safari 5.1-6 */
+/*  background: url(../../img/default-bg.jpg) no-repeat center center fixed;*/
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  overflow-x: hidden;
+}
