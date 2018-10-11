@@ -104,11 +104,19 @@ if(isset($_GET["encodeid"])){
             padding: 4px 5px;
             margin: 10px 0px 10px 0px;
         }
+        .span-border-bottom {
+            border: 1px solid #999;
+            border-radius: 5px;
+            width: 100%;
+            height: 112px;
+            padding: 4px 5px;
+            margin: 10px 0px 10px 0px;
+        }
         .rts-border {
             border: 1px solid #999;
             width: 100%;
             padding: 3px;
-            margin: 10px 0px 20px 0px;
+            margin: 10px 0px 5px 0px;
         }
         .span-empty {
             width: 100%;
@@ -133,7 +141,7 @@ if(isset($_GET["encodeid"])){
             margin: 1mm;
         }
         @media print {
-            #page-break {margin-top: 4mm;}
+            #page-break {margin-top: 18mm;}
         }
         .particular {
             font-size: 11px;
@@ -180,9 +188,9 @@ if(isset($_GET["encodeid"])){
 
                     $newPud = date("m/d/Y", strtotime($pud));
 
-                    if($count % 6 != 0) {
+                    if($count % 4 != 0) {
 
-                        if($count % 6 == 1) {
+                        if($count % 4 == 1) {
 
                     echo '
 
@@ -259,6 +267,18 @@ if(isset($_GET["encodeid"])){
                                         <img alt="Coding Sips" src="includes/barcode.php?text='.$barcode.'&orientation=horizontal&size=40" style="width: 100%; height: 25px; margin-left: -5px;" />
                                         <b>PPB Messengerial Services, Inc.</b><br>
                                         <span>Tel. No. 478-2822</span>
+                                    </td>
+                                </tr>
+                                <tr class="highlight">
+                                    <td colspan="4">
+                                        <div class="span-border-bottom">
+                                        <b style="font-size: 9px;">Paalala para sa tamang proseso ng pag deliver.</b><br>
+                                        <i>Ang pagpeke ng pirma sa resibo ay may kaukulang mabigat na parusa.</i><br>
+                                        1.Magtanong muna kung tama ang address na iyong dedeliveran at kung doon ba talaga nakatira ang subscriber.<br>
+                                        2.Iparesib at papirmahan ang resibo.<br>
+                                        3.Hindi mensahero ang pipirma maliban kung ayaw talaga pumirma ng magreresib ilagay ang pangalan ng nag resib relation at kulay ng gate.<br>
+                                        4.Maari lamang mag sulat ng mailbox sa resibo kung talagang may mailbox talaga at tama ang dinedeliveran. Kung may mailbox ilagay ang kulay ng mailbox.
+                                        </div>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -345,6 +365,18 @@ if(isset($_GET["encodeid"])){
                                         <span>Tel. No. 478-2822</span>
                                     </td>
                                 </tr>
+                                <tr class="highlight">
+                                    <td colspan="4">
+                                        <div class="span-border-bottom">
+                                        <b style="font-size: 9px;">Paalala para sa tamang proseso ng pag deliver.</b><br>
+                                        <i>Ang pagpeke ng pirma sa resibo ay may kaukulang mabigat na parusa.</i><br>
+                                        1.Magtanong muna kung tama ang address na iyong dedeliveran at kung doon ba talaga nakatira ang subscriber.<br>
+                                        2.Iparesib at papirmahan ang resibo.<br>
+                                        3.Hindi mensahero ang pipirma maliban kung ayaw talaga pumirma ng magreresib ilagay ang pangalan ng nag resib relation at kulay ng gate.<br>
+                                        4.Maari lamang mag sulat ng mailbox sa resibo kung talagang may mailbox talaga at tama ang dinedeliveran. Kung may mailbox ilagay ang kulay ng mailbox.
+                                        </div>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                                 </div>
@@ -429,6 +461,18 @@ if(isset($_GET["encodeid"])){
                                         <img alt="Coding Sips" src="includes/barcode.php?text='.$barcode.'&orientation=horizontal&size=40" style="width: 100%; height: 25px; margin-left: -5px;" />
                                         <b>PPB Messengerial Services, Inc.</b><br>
                                         <span>Tel. No. 478-2822</span>
+                                    </td>
+                                </tr>
+                                <tr class="highlight">
+                                    <td colspan="4">
+                                        <div class="span-border-bottom">
+                                        <b style="font-size: 9px;">Paalala para sa tamang proseso ng pag deliver.</b><br>
+                                        <i>Ang pagpeke ng pirma sa resibo ay may kaukulang mabigat na parusa.</i><br>
+                                        1.Magtanong muna kung tama ang address na iyong dedeliveran at kung doon ba talaga nakatira ang subscriber.<br>
+                                        2.Iparesib at papirmahan ang resibo.<br>
+                                        3.Hindi mensahero ang pipirma maliban kung ayaw talaga pumirma ng magreresib ilagay ang pangalan ng nag resib relation at kulay ng gate.<br>
+                                        4.Maari lamang mag sulat ng mailbox sa resibo kung talagang may mailbox talaga at tama ang dinedeliveran. Kung may mailbox ilagay ang kulay ng mailbox.
+                                        </div>
                                     </td>
                                 </tr>
                                 </tbody>
