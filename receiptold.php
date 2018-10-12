@@ -26,7 +26,6 @@ $classactiveencodemasterlists = "";
 $echo = "";
 $messengerid = "";
 $encodeid = "0";
-
 // GET USER ID
 if(isset($_GET["id"])){
   $id = preg_replace('#[^a-z0-9-]#i', '', $_GET['id']);
@@ -34,7 +33,6 @@ if(isset($_GET["id"])){
   header("location: index.php");
   exit(); 
 }
-
 // SELECT USER INFO
 $sql_user = "SELECT * FROM ppbms_user WHERE id='$id' LIMIT 1";
 $user_query = mysqli_query($db_conn, $sql_user);
@@ -47,22 +45,17 @@ while ($row = mysqli_fetch_array($user_query, MYSQLI_ASSOC)) {
   $lastlogin = $row["user_last_login"];
   $level = $row["user_level"];
 }
-
 if($level == "1") {
     $accname = "Administrator";
 }
-
 // CHECK TO SEE IF THE VIEWER IS THE ACCOUNT USER
 $isOwner = "No";
-
 if($id == $log_id && $user_ok == true){
   $isOwner = "Yes";
 }
-
 if(isset($_GET["encodeid"])){
   $encodeid = $_GET['encodeid'];
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,6 +79,9 @@ if(isset($_GET["encodeid"])){
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css" media="print">
+      @page { size: landscape; }
+    </style>
     <style type="text/css">
         body {
            font-size: 8px;
@@ -101,21 +97,11 @@ if(isset($_GET["encodeid"])){
             padding: 4px 5px;
             margin: 10px 0px 10px 0px;
         }
-        .span-border-bottom {
-            border: 1px solid #999;
-            border-radius: 5px;
-            width: 100%;
-            height: 69px;
-            padding: 4px 5px;
-            margin: 10px 0px 10px 0px;
-            font-size: 6.8px;
-        }
         .rts-border {
             border: 1px solid #999;
             width: 100%;
             padding: 3px;
-            margin: 10px 0px -5px 0px;
-            font-size: 7px;
+            margin: 10px 0px 20px 0px;
         }
         .span-empty {
             width: 100%;
@@ -138,16 +124,15 @@ if(isset($_GET["encodeid"])){
         @page {
             size:  auto; 
             margin: 1mm;
-            size: landscape;
         }
         @media print {
-            #page-break {margin-top: 0mm;}
+            #page-break {margin-top: 4mm;}
         }
         .particular {
             font-size: 11px;
         }
         .particular2 {
-            font-size: 9px;
+            font-size: 11px;
         }
         .cut-text { 
             font-family: Arial;
@@ -160,7 +145,7 @@ if(isset($_GET["encodeid"])){
         }
         #subsname {
             font-weight: bold;
-            font-size: 10px;
+            font-size: 11px;
         }
     </style>
   </head>
@@ -185,19 +170,13 @@ if(isset($_GET["encodeid"])){
                     $pud = $row["record_pud"];
                     $jobnumber = $row["record_job_num"];
                     $seqnumber = $row["record_seq_num"];
-
                     $newPud = date("m/d/Y", strtotime($pud));
-
-                    if($count % 4 != 0) {
-
-                        if($count % 4 == 1) {
-
+                    if($count % 6 != 0) {
+                        if($count % 6 == 1) {
                     echo '
-
                     <div class="row" id="page-break">
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 table-border">
                             <div class="row">
-
                             <table data-toggle="table" class="table-data">
                                 <thead class="table-header">
                                 <tr>
@@ -216,7 +195,7 @@ if(isset($_GET["encodeid"])){
                                         <div class="cut-text">Area: '.$area.'</div>
                                     </td>
                                     <td class="particular2 pudcc" colspan="2">
-                                        <div class="cut-text" style="font-size: 11px;">Cycle: '.$cyclecode.'</div>
+                                        <div class="cut-text">Cycle: '.$cyclecode.'</div>
                                         <div class="cut-text">PUD: '.$pud.'</div>
                                         <div class="cut-text">Job Order #: '.$jobnumber.'</div>
                                         <div class="cut-text">POD #: '.$count.'</div>
@@ -228,7 +207,7 @@ if(isset($_GET["encodeid"])){
                                     </td>
                                 </tr>
                                 <tr class="highlight">
-                                    <td colspan="4"><span style="font-size: 7px;"><b>I hereby acknowledge receipt of the particulars details below</b></span></td>
+                                    <td colspan="4"><span style="font-size: 6px;"><b>I hereby acknowledge receipt of the particulars details below</b></span></td>
                                 </tr>
                                 <tr class="highlight">
                                     <td colspan="4">
@@ -264,21 +243,9 @@ if(isset($_GET["encodeid"])){
                                     </div>
                                     </td>
                                     <td class="particular" colspan="2">
-                                        <img alt="Coding Sips" src="includes/barcode.php?text='.$barcode.'&orientation=horizontal&size=40" style="width: 100%; height: 25px; margin-left: -13px;" />
+                                        <img alt="Coding Sips" src="includes/barcode.php?text='.$barcode.'&orientation=horizontal&size=40" style="width: 100%; height: 25px; margin-left: -5px;" />
                                         <b>PPB Messengerial Services, Inc.</b><br>
                                         <span>Tel. No. 478-2822</span>
-                                    </td>
-                                </tr>
-                                <tr class="highlight">
-                                    <td colspan="4">
-                                        <div class="span-border-bottom">
-                                        <b style="font-size: 9px;">Paalala para sa tamang proseso ng pag deliver.</b><br>
-                                        <i>Ang pagpeke ng pirma at nagresib sa resibo ay may kaukulang mabigat na parusa.</i><br>
-                                        1.Magtanong muna kung tama ang address na iyong dedeliveran at kung doon ba talaga nakatira ang subscriber.<br>
-                                        2.Iparesib at papirmahan ang resibo.<br>
-                                        3.Hindi mensahero ang pipirma maliban kung ayaw talaga pumirma ng magreresib ilagay ang pangalan ng nag resib relation at palatandaan.<br>
-                                        4.Maari lamang mag sulat ng mailbox sa resibo kung talagang may mailbox talaga at tama ang dinedeliveran. Kung may mailbox ilagay ang kulay ng mailbox.
-                                        </div>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -286,14 +253,11 @@ if(isset($_GET["encodeid"])){
                                 </div>
                             </div>
                             
-
                     ';
-
                     } else {
                         echo '
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 table-border">
                             <div class="row">
-
                             <table data-toggle="table" class="table-data">
                                 <thead class="table-header">
                                 <tr>
@@ -312,7 +276,7 @@ if(isset($_GET["encodeid"])){
                                         <div class="cut-text">Area: '.$area.'</div>
                                     </td>
                                     <td class="particular2 pudcc" colspan="2">
-                                        <div class="cut-text" style="font-size: 11px;">Cycle: '.$cyclecode.'</div>
+                                        <div class="cut-text">Cycle: '.$cyclecode.'</div>
                                         <div class="cut-text">PUD: '.$pud.'</div>
                                         <div class="cut-text">Job Order #: '.$jobnumber.'</div>
                                         <div class="cut-text">POD #: '.$count.'</div>
@@ -324,7 +288,7 @@ if(isset($_GET["encodeid"])){
                                     </td>
                                 </tr>
                                 <tr class="highlight">
-                                    <td colspan="4"><span style="font-size: 7px;"><b>I hereby acknowledge receipt of the particulars details below</b></span></td>
+                                    <td colspan="4"><span style="font-size: 6px;"><b>I hereby acknowledge receipt of the particulars details below</b></span></td>
                                 </tr>
                                 <tr class="highlight">
                                     <td colspan="4">
@@ -360,21 +324,9 @@ if(isset($_GET["encodeid"])){
                                     </div>
                                     </td>
                                     <td class="particular" colspan="2">
-                                        <img alt="Coding Sips" src="includes/barcode.php?text='.$barcode.'&orientation=horizontal&size=40" style="width: 100%; height: 25px; margin-left: -13px;" />
+                                        <img alt="Coding Sips" src="includes/barcode.php?text='.$barcode.'&orientation=horizontal&size=40" style="width: 100%; height: 25px; margin-left: -5px;" />
                                         <b>PPB Messengerial Services, Inc.</b><br>
                                         <span>Tel. No. 478-2822</span>
-                                    </td>
-                                </tr>
-                                <tr class="highlight">
-                                    <td colspan="4">
-                                        <div class="span-border-bottom">
-                                        <b style="font-size: 9px;">Paalala para sa tamang proseso ng pag deliver.</b><br>
-                                        <i>Ang pagpeke ng pirma at nagresib sa resibo ay may kaukulang mabigat na parusa.</i><br>
-                                        1.Magtanong muna kung tama ang address na iyong dedeliveran at kung doon ba talaga nakatira ang subscriber.<br>
-                                        2.Iparesib at papirmahan ang resibo.<br>
-                                        3.Hindi mensahero ang pipirma maliban kung ayaw talaga pumirma ng magreresib ilagay ang pangalan ng nag resib relation at palatandaan.<br>
-                                        4.Maari lamang mag sulat ng mailbox sa resibo kung talagang may mailbox talaga at tama ang dinedeliveran. Kung may mailbox ilagay ang kulay ng mailbox.
-                                        </div>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -383,15 +335,10 @@ if(isset($_GET["encodeid"])){
                             </div>
                         ';
                     }
-
                 } else {
-
-
                     echo '
-
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 table-border">
                             <div class="row">
-
                             <table data-toggle="table" class="table-data">
                                 <thead class="table-header">
                                 <tr>
@@ -410,7 +357,7 @@ if(isset($_GET["encodeid"])){
                                         <div class="cut-text">Area: '.$area.'</div>
                                     </td>
                                     <td class="particular2 pudcc" colspan="2">
-                                        <div class="cut-text" style="font-size: 11px;">Cycle: '.$cyclecode.'</div>
+                                        <div class="cut-text">Cycle: '.$cyclecode.'</div>
                                         <div class="cut-text">PUD: '.$pud.'</div>
                                         <div class="cut-text">Job Order #: '.$jobnumber.'</div>
                                         <div class="cut-text">POD #: '.$count.'</div>
@@ -422,7 +369,7 @@ if(isset($_GET["encodeid"])){
                                     </td>
                                 </tr>
                                 <tr class="highlight">
-                                    <td colspan="4"><span style="font-size: 7px;"><b>I hereby acknowledge receipt of the particulars details below</b></span></td>
+                                    <td colspan="4"><span style="font-size: 6px;"><b>I hereby acknowledge receipt of the particulars details below</b></span></td>
                                 </tr>
                                 <tr class="highlight">
                                     <td colspan="4">
@@ -458,21 +405,9 @@ if(isset($_GET["encodeid"])){
                                     </div>
                                     </td>
                                     <td class="particular" colspan="2">
-                                        <img alt="Coding Sips" src="includes/barcode.php?text='.$barcode.'&orientation=horizontal&size=40" style="width: 100%; height: 25px; margin-left: -13px;" />
+                                        <img alt="Coding Sips" src="includes/barcode.php?text='.$barcode.'&orientation=horizontal&size=40" style="width: 100%; height: 25px; margin-left: -5px;" />
                                         <b>PPB Messengerial Services, Inc.</b><br>
                                         <span>Tel. No. 478-2822</span>
-                                    </td>
-                                </tr>
-                                <tr class="highlight">
-                                    <td colspan="4">
-                                        <div class="span-border-bottom">
-                                        <b style="font-size: 9px;">Paalala para sa tamang proseso ng pag deliver.</b><br>
-                                        <i>Ang pagpeke ng pirma at nagresib sa resibo ay may kaukulang mabigat na parusa.</i><br>
-                                        1.Magtanong muna kung tama ang address na iyong dedeliveran at kung doon ba talaga nakatira ang subscriber.<br>
-                                        2.Iparesib at papirmahan ang resibo.<br>
-                                        3.Hindi mensahero ang pipirma maliban kung ayaw talaga pumirma ng magreresib ilagay ang pangalan ng nag resib relation at palatandaan.<br>
-                                        4.Maari lamang mag sulat ng mailbox sa resibo kung talagang may mailbox talaga at tama ang dinedeliveran. Kung may mailbox ilagay ang kulay ng mailbox.
-                                        </div>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -482,12 +417,9 @@ if(isset($_GET["encodeid"])){
               </div>
                     ';
                   
-
                 }
                 }
-
                 mysqli_close($db_conn);
-
             ?>
 
 

@@ -67,7 +67,7 @@ if($_POST["search"] == "") {
      <td>'.$assined_count.'</td>
      <td><a id="'.$recid.'" href="account.php?id='.$log_id.'&masterlists=focus&select=view&encodeid='.$recid.'&check=unassigned">'.$unassined_count.'</a></td>
      <td>'.$total_count.'</td>
-     <td><a id="'.$recid.'" href="account.php?id='.$log_id.'&masterlists=focus&select=view&encodeid='.$recid.'">View Record</a> | <a target="_blank" id="'.$recid.'" href="receipt.php?id='.$log_id.'&encodeid='.$recid.'">Print Receipt</a> | <a href="#" id="'.$recid.'" onclick="openEncodeListsDeleteDialog(\''.$recid.'\')">Delete</a></td>
+     <td><a id="'.$recid.'" href="account.php?id='.$log_id.'&masterlists=focus&select=view&encodeid='.$recid.'">View Record</a> | <a target="_blank" id="'.$recid.'" href="receipt.php?id='.$log_id.'&encodeid='.$recid.'">Print Receipt</a> | <a target="_blank" id="'.$recid.'" href="receiptold.php?id='.$log_id.'&encodeid='.$recid.'">Print Old Receipt</a> | <a href="#" id="'.$recid.'" onclick="openEncodeListsDeleteDialog(\''.$recid.'\')">Delete</a></td>
       </tr>
       ';   
 

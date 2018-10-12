@@ -20,9 +20,6 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css" media="print">
-      @page { size: landscape; }
-    </style>
     <style type="text/css">
         body {
            font-size: 8px;
@@ -42,15 +39,17 @@
             border: 1px solid #999;
             border-radius: 5px;
             width: 100%;
-            height: 112px;
+            height: 69px;
             padding: 4px 5px;
             margin: 10px 0px 10px 0px;
+            font-size: 6.8px;
         }
         .rts-border {
             border: 1px solid #999;
             width: 100%;
             padding: 3px;
-            margin: 10px 0px 5px 0px;
+            margin: 10px 0px -5px 0px;
+            font-size: 7px;
         }
         .span-empty {
             width: 100%;
@@ -73,15 +72,16 @@
         @page {
             size:  auto; 
             margin: 1mm;
+            size: landscape;
         }
         @media print {
-            #page-break {margin-top: 18mm;}
+            #page-break {margin-top: 0mm;}
         }
         .particular {
             font-size: 11px;
         }
         .particular2 {
-            font-size: 11px;
+            font-size: 9px;
         }
         .cut-text { 
             font-family: Arial;
@@ -94,7 +94,7 @@
         }
         #subsname {
             font-weight: bold;
-            font-size: 11px;
+            font-size: 10px;
         }
     </style>
   </head>
@@ -149,7 +149,7 @@ $newPud = "dfasdfasdf";
                                             <div class="cut-text">Area: '.$area.'</div>
                                         </td>
                                         <td class="particular2 pudcc" colspan="2">
-                                            <div class="cut-text">Cycle: '.$cyclecode.'</div>
+                                            <div class="cut-text" style="font-size: 11px;">Cycle: '.$cyclecode.'</div>
                                             <div class="cut-text">PUD: '.$pud.'</div>
                                             <div class="cut-text">Job Order #: '.$jobnumber.'</div>
                                             <div class="cut-text">POD #: '.$count.'</div>
@@ -161,7 +161,7 @@ $newPud = "dfasdfasdf";
                                         </td>
                                     </tr>
                                     <tr class="highlight">
-                                        <td colspan="4"><span style="font-size: 6px;"><b>I hereby acknowledge receipt of the particulars details below</b></span></td>
+                                        <td colspan="4"><span style="font-size: 7px;"><b>I hereby acknowledge receipt of the particulars details below</b></span></td>
                                     </tr>
                                     <tr class="highlight">
                                         <td colspan="4">
@@ -197,7 +197,7 @@ $newPud = "dfasdfasdf";
                                         </div>
                                         </td>
                                         <td class="particular" colspan="2">
-                                            <img alt="Coding Sips" src="includes/barcode.php?text='.$barcode.'&orientation=horizontal&size=40" style="width: 100%; height: 25px; margin-left: -5px;" />
+                                            <img alt="Coding Sips" src="includes/barcode.php?text='.$barcode.'&orientation=horizontal&size=40" style="width: 100%; height: 25px; margin-left: -13px;" />
                                             <b>PPB Messengerial Services, Inc.</b><br>
                                             <span>Tel. No. 478-2822</span>
                                         </td>
@@ -206,10 +206,10 @@ $newPud = "dfasdfasdf";
                                         <td colspan="4">
                                             <div class="span-border-bottom">
                                             <b style="font-size: 9px;">Paalala para sa tamang proseso ng pag deliver.</b><br>
-                                            <i>Ang pagpeke ng pirma sa resibo ay may kaukulang mabigat na parusa.</i><br>
+                                            <i>Ang pagpeke ng pirma at nagresib sa resibo ay may kaukulang mabigat na parusa.</i><br>
                                             1.Magtanong muna kung tama ang address na iyong dedeliveran at kung doon ba talaga nakatira ang subscriber.<br>
                                             2.Iparesib at papirmahan ang resibo.<br>
-                                            3.Hindi mensahero ang pipirma maliban kung ayaw talaga pumirma ng magreresib ilagay ang pangalan ng nag resib relation at kulay ng gate.<br>
+                                            3.Hindi mensahero ang pipirma maliban kung ayaw talaga pumirma ng magreresib ilagay ang pangalan ng nag resib relation at palatandaan.<br>
                                             4.Maari lamang mag sulat ng mailbox sa resibo kung talagang may mailbox talaga at tama ang dinedeliveran. Kung may mailbox ilagay ang kulay ng mailbox.
                                             </div>
                                         </td>
@@ -245,7 +245,7 @@ $newPud = "dfasdfasdf";
                                             <div class="cut-text">Area: '.$area.'</div>
                                         </td>
                                         <td class="particular2 pudcc" colspan="2">
-                                            <div class="cut-text">Cycle: '.$cyclecode.'</div>
+                                            <div class="cut-text" style="font-size: 11px;">Cycle: '.$cyclecode.'</div>
                                             <div class="cut-text">PUD: '.$pud.'</div>
                                             <div class="cut-text">Job Order #: '.$jobnumber.'</div>
                                             <div class="cut-text">POD #: '.$count.'</div>
@@ -257,7 +257,7 @@ $newPud = "dfasdfasdf";
                                         </td>
                                     </tr>
                                     <tr class="highlight">
-                                        <td colspan="4"><span style="font-size: 6px;"><b>I hereby acknowledge receipt of the particulars details below</b></span></td>
+                                        <td colspan="4"><span style="font-size: 7px;"><b>I hereby acknowledge receipt of the particulars details below</b></span></td>
                                     </tr>
                                     <tr class="highlight">
                                         <td colspan="4">
@@ -293,7 +293,7 @@ $newPud = "dfasdfasdf";
                                         </div>
                                         </td>
                                         <td class="particular" colspan="2">
-                                            <img alt="Coding Sips" src="includes/barcode.php?text='.$barcode.'&orientation=horizontal&size=40" style="width: 100%; height: 25px; margin-left: -5px;" />
+                                            <img alt="Coding Sips" src="includes/barcode.php?text='.$barcode.'&orientation=horizontal&size=40" style="width: 100%; height: 25px; margin-left: -13px;" />
                                             <b>PPB Messengerial Services, Inc.</b><br>
                                             <span>Tel. No. 478-2822</span>
                                         </td>
@@ -302,10 +302,10 @@ $newPud = "dfasdfasdf";
                                         <td colspan="4">
                                             <div class="span-border-bottom">
                                             <b style="font-size: 9px;">Paalala para sa tamang proseso ng pag deliver.</b><br>
-                                            <i>Ang pagpeke ng pirma sa resibo ay may kaukulang mabigat na parusa.</i><br>
+                                            <i>Ang pagpeke ng pirma at nagresib sa resibo ay may kaukulang mabigat na parusa.</i><br>
                                             1.Magtanong muna kung tama ang address na iyong dedeliveran at kung doon ba talaga nakatira ang subscriber.<br>
                                             2.Iparesib at papirmahan ang resibo.<br>
-                                            3.Hindi mensahero ang pipirma maliban kung ayaw talaga pumirma ng magreresib ilagay ang pangalan ng nag resib relation at kulay ng gate.<br>
+                                            3.Hindi mensahero ang pipirma maliban kung ayaw talaga pumirma ng magreresib ilagay ang pangalan ng nag resib relation at palatandaan.<br>
                                             4.Maari lamang mag sulat ng mailbox sa resibo kung talagang may mailbox talaga at tama ang dinedeliveran. Kung may mailbox ilagay ang kulay ng mailbox.
                                             </div>
                                         </td>
@@ -343,7 +343,7 @@ $newPud = "dfasdfasdf";
                                             <div class="cut-text">Area: '.$area.'</div>
                                         </td>
                                         <td class="particular2 pudcc" colspan="2">
-                                            <div class="cut-text">Cycle: '.$cyclecode.'</div>
+                                            <div class="cut-text" style="font-size: 11px;">Cycle: '.$cyclecode.'</div>
                                             <div class="cut-text">PUD: '.$pud.'</div>
                                             <div class="cut-text">Job Order #: '.$jobnumber.'</div>
                                             <div class="cut-text">POD #: '.$count.'</div>
@@ -355,7 +355,7 @@ $newPud = "dfasdfasdf";
                                         </td>
                                     </tr>
                                     <tr class="highlight">
-                                        <td colspan="4"><span style="font-size: 6px;"><b>I hereby acknowledge receipt of the particulars details below</b></span></td>
+                                        <td colspan="4"><span style="font-size: 7px;"><b>I hereby acknowledge receipt of the particulars details below</b></span></td>
                                     </tr>
                                     <tr class="highlight">
                                         <td colspan="4">
@@ -391,7 +391,7 @@ $newPud = "dfasdfasdf";
                                         </div>
                                         </td>
                                         <td class="particular" colspan="2">
-                                            <img alt="Coding Sips" src="includes/barcode.php?text='.$barcode.'&orientation=horizontal&size=40" style="width: 100%; height: 25px; margin-left: -5px;" />
+                                            <img alt="Coding Sips" src="includes/barcode.php?text='.$barcode.'&orientation=horizontal&size=40" style="width: 100%; height: 25px; margin-left: -13px;" />
                                             <b>PPB Messengerial Services, Inc.</b><br>
                                             <span>Tel. No. 478-2822</span>
                                         </td>
@@ -400,10 +400,10 @@ $newPud = "dfasdfasdf";
                                         <td colspan="4">
                                             <div class="span-border-bottom">
                                             <b style="font-size: 9px;">Paalala para sa tamang proseso ng pag deliver.</b><br>
-                                            <i>Ang pagpeke ng pirma sa resibo ay may kaukulang mabigat na parusa.</i><br>
+                                            <i>Ang pagpeke ng pirma at nagresib sa resibo ay may kaukulang mabigat na parusa.</i><br>
                                             1.Magtanong muna kung tama ang address na iyong dedeliveran at kung doon ba talaga nakatira ang subscriber.<br>
                                             2.Iparesib at papirmahan ang resibo.<br>
-                                            3.Hindi mensahero ang pipirma maliban kung ayaw talaga pumirma ng magreresib ilagay ang pangalan ng nag resib relation at kulay ng gate.<br>
+                                            3.Hindi mensahero ang pipirma maliban kung ayaw talaga pumirma ng magreresib ilagay ang pangalan ng nag resib relation at palatandaan.<br>
                                             4.Maari lamang mag sulat ng mailbox sa resibo kung talagang may mailbox talaga at tama ang dinedeliveran. Kung may mailbox ilagay ang kulay ng mailbox.
                                             </div>
                                         </td>
