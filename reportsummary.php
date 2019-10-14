@@ -456,7 +456,7 @@ for($i=0; $i<$countSummary; $i++) {
 
 	// DIVIDER
 
-	$sql_rts = "SELECT * FROM ppbms_record WHERE record_status = 'RTS' AND record_reason_rts != 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+	$sql_rts = "SELECT * FROM ppbms_record WHERE record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 	$query_rts = mysqli_query($db_conn, $sql_rts);
 	$count_rts = mysqli_num_rows($query_rts);
 
@@ -477,7 +477,7 @@ for($i=0; $i<$countSummary; $i++) {
 
 	// DIVIDER
 
-	$sql_oos_ncr = "SELECT * FROM ppbms_record WHERE record_status = 'RTS' AND record_reason_rts = 'OUT OF SCOPE' AND (record_area = 'PARANAQUE' OR record_area = 'MARIKINA' OR record_area = 'MUNTINLUPA' OR record_area = 'LASPINAS' OR record_area = 'LAS PINAS') AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+	$sql_oos_ncr = "SELECT * FROM ppbms_record WHERE record_status = 'RTS' AND record_reason_rts LIKE '%OUT OF SCOPE%' AND (record_area = 'PARANAQUE' OR record_area = 'MARIKINA' OR record_area = 'MUNTINLUPA' OR record_area = 'LASPINAS' OR record_area = 'LAS PINAS') AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 	$query_oos_ncr = mysqli_query($db_conn, $sql_oos_ncr);
 	$count_oos_ncr = mysqli_num_rows($query_oos_ncr);
 
@@ -498,7 +498,7 @@ for($i=0; $i<$countSummary; $i++) {
 
 	// DIVIDER
 
-	$sql_oos_prov = "SELECT * FROM ppbms_record WHERE record_status = 'RTS' AND record_reason_rts = 'OUT OF SCOPE' AND (record_area = 'LAGUNA' OR record_area = 'RIZAL') AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+	$sql_oos_prov = "SELECT * FROM ppbms_record WHERE record_status = 'RTS' AND record_reason_rts LIKE '%OUT OF SCOPE%' AND (record_area = 'LAGUNA' OR record_area = 'RIZAL') AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 	$query_oos_prov = mysqli_query($db_conn, $sql_oos_prov);
 	$count_oos_prov = mysqli_num_rows($query_oos_prov);
 

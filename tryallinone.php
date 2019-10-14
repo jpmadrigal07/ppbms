@@ -1481,7 +1481,7 @@ for($i1=0; $i1<$countSummary; $i1++) {
 
     $count_rts = 0;
 
-    $sql_rts = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_status = 'RTS' AND record_reason_rts != 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+    $sql_rts = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
     $query_rts = mysqli_query($db_conn, $sql_rts);
     if($query_rts) {
         while ($row = mysqli_fetch_array($query_rts, MYSQLI_ASSOC)) {
@@ -1508,7 +1508,7 @@ for($i1=0; $i1<$countSummary; $i1++) {
 
     $count_oos_ncr = 0;
 
-    $sql_oos_ncr = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_status = 'RTS' AND record_reason_rts = 'OUT OF SCOPE' AND (record_area = 'PARANAQUE' OR record_area = 'PARA?AQUE' OR record_area = 'PARAÑAQUE' OR record_area = 'MARIKINA' OR record_area = 'MUNTINLUPA' OR record_area = 'LASPINAS' OR record_area = 'LAS PINAS') AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+    $sql_oos_ncr = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_status = 'RTS' AND record_reason_rts LIKE '%OUT OF SCOPE%' AND (record_area = 'PARANAQUE' OR record_area = 'PARA?AQUE' OR record_area = 'PARAÑAQUE' OR record_area = 'MARIKINA' OR record_area = 'MUNTINLUPA' OR record_area = 'LASPINAS' OR record_area = 'LAS PINAS') AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
     $query_oos_ncr = mysqli_query($db_conn, $sql_oos_ncr);
     if($query_oos_ncr) {
         while ($row = mysqli_fetch_array($query_oos_ncr, MYSQLI_ASSOC)) {
@@ -1535,7 +1535,7 @@ for($i1=0; $i1<$countSummary; $i1++) {
 
     $count_oos_prov = 0;
 
-    $sql_oos_prov = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_status = 'RTS' AND record_reason_rts = 'OUT OF SCOPE' AND (record_area = 'LAGUNA' OR record_area = 'RIZAL') AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+    $sql_oos_prov = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_status = 'RTS' AND record_reason_rts LIKE '%OUT OF SCOPE%' AND (record_area = 'LAGUNA' OR record_area = 'RIZAL') AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
     $query_oos_prov = mysqli_query($db_conn, $sql_oos_prov);
     if($query_oos_prov) {
         while ($row = mysqli_fetch_array($query_oos_prov, MYSQLI_ASSOC)) {
@@ -4641,7 +4641,7 @@ $excel -> setActiveSheetIndex(2)
 
 $count_total_pque_rts = 0;
 
-$sql_total_pque_rts = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND (record_area = 'PARANAQUE' OR record_area = 'PARA?AQUE' OR record_area = 'PARAÑAQUE') AND record_status = 'RTS' AND record_reason_rts != 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_pque_rts = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND (record_area = 'PARANAQUE' OR record_area = 'PARA?AQUE' OR record_area = 'PARAÑAQUE') AND record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_pque_rts = mysqli_query($db_conn, $sql_total_pque_rts);
 if($query_total_pque_rts) {
     while ($row = mysqli_fetch_array($query_total_pque_rts, MYSQLI_ASSOC)) {
@@ -4666,7 +4666,7 @@ $excel -> setActiveSheetIndex(2)
 
 $count_total_pque_oos = 0;
 
-$sql_total_pque_oos = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND (record_area = 'PARANAQUE' OR record_area = 'PARA?AQUE' OR record_area = 'PARAÑAQUE') AND record_reason_rts = 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_pque_oos = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND (record_area = 'PARANAQUE' OR record_area = 'PARA?AQUE' OR record_area = 'PARAÑAQUE') AND record_reason_rts LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_pque_oos = mysqli_query($db_conn, $sql_total_pque_oos);
 if($query_total_pque_oos) {
     while ($row = mysqli_fetch_array($query_total_pque_oos, MYSQLI_ASSOC)) {
@@ -5266,7 +5266,7 @@ $excel -> setActiveSheetIndex(2)
 
 $count_total_lpnas_rts = 0;
 
-$sql_total_lpnas_rts = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND (record_area = 'LASPINAS' OR record_area = 'LAS PINAS') AND record_status = 'RTS' AND record_reason_rts != 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_lpnas_rts = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND (record_area = 'LASPINAS' OR record_area = 'LAS PINAS') AND record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_lpnas_rts = mysqli_query($db_conn, $sql_total_lpnas_rts);
 if($query_total_lpnas_rts) {
     while ($row = mysqli_fetch_array($query_total_lpnas_rts, MYSQLI_ASSOC)) {
@@ -5291,7 +5291,7 @@ $excel -> setActiveSheetIndex(2)
 
 $count_total_lpnas_oos = 0;
 
-$sql_total_lpnas_oos = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND (record_area = 'LASPINAS' OR record_area = 'LAS PINAS') AND record_reason_rts = 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_lpnas_oos = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND (record_area = 'LASPINAS' OR record_area = 'LAS PINAS') AND record_reason_rts LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_lpnas_oos = mysqli_query($db_conn, $sql_total_lpnas_oos);
 if($query_total_lpnas_oos) {
     while ($row = mysqli_fetch_array($query_total_lpnas_oos, MYSQLI_ASSOC)) {
@@ -5891,7 +5891,7 @@ $excel -> setActiveSheetIndex(2)
 
 $count_total_mlupa_rts = 0;
 
-$sql_total_mlupa_rts = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_area = 'MUNTINLUPA' AND record_status = 'RTS' AND record_reason_rts != 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_mlupa_rts = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_area = 'MUNTINLUPA' AND record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_mlupa_rts = mysqli_query($db_conn, $sql_total_mlupa_rts);
 if($query_total_mlupa_rts) {
     while ($row = mysqli_fetch_array($query_total_mlupa_rts, MYSQLI_ASSOC)) {
@@ -5916,7 +5916,7 @@ $excel -> setActiveSheetIndex(2)
 
 $count_total_mlupa_oos = 0;
 
-$sql_total_mlupa_oos = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_area = 'MUNTINLUPA' AND record_reason_rts = 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_mlupa_oos = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_area = 'MUNTINLUPA' AND record_reason_rts LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_mlupa_oos = mysqli_query($db_conn, $sql_total_mlupa_oos);
 if($query_total_mlupa_oos) {
     while ($row = mysqli_fetch_array($query_total_mlupa_oos, MYSQLI_ASSOC)) {
@@ -6516,7 +6516,7 @@ $excel -> setActiveSheetIndex(2)
 
 $count_total_mkna_rts = 0;
 
-$sql_total_mkna_rts = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_area = 'MARIKINA' AND record_status = 'RTS' AND record_reason_rts != 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_mkna_rts = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_area = 'MARIKINA' AND record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_mkna_rts = mysqli_query($db_conn, $sql_total_mkna_rts);
 if($query_total_mkna_rts) {
     while ($row = mysqli_fetch_array($query_total_mkna_rts, MYSQLI_ASSOC)) {
@@ -6541,7 +6541,7 @@ $excel -> setActiveSheetIndex(2)
 
 $count_total_mkna_oos = 0;
 
-$sql_total_mkna_oos = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_area = 'MARIKINA' AND record_reason_rts = 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_mkna_oos = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_area = 'MARIKINA' AND record_reason_rts LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_mkna_oos = mysqli_query($db_conn, $sql_total_mkna_oos);
 if($query_total_mkna_oos) {
     while ($row = mysqli_fetch_array($query_total_mkna_oos, MYSQLI_ASSOC)) {
@@ -7141,7 +7141,7 @@ $excel -> setActiveSheetIndex(2)
 
 $count_total_rizal_rts = 0;
 
-$sql_total_rizal_rts = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_area = 'RIZAL' AND record_status = 'RTS' AND record_reason_rts != 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_rizal_rts = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_area = 'RIZAL' AND record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_rizal_rts = mysqli_query($db_conn, $sql_total_rizal_rts);
 if($query_total_rizal_rts) {
     while ($row = mysqli_fetch_array($query_total_rizal_rts, MYSQLI_ASSOC)) {
@@ -7166,7 +7166,7 @@ $excel -> setActiveSheetIndex(2)
 
 $count_total_rizal_oos = 0;
 
-$sql_total_rizal_oos = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_area = 'RIZAL' AND record_reason_rts = 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_rizal_oos = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_area = 'RIZAL' AND record_reason_rts LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_rizal_oos = mysqli_query($db_conn, $sql_total_rizal_oos);
 if($query_total_rizal_oos) {
     while ($row = mysqli_fetch_array($query_total_rizal_oos, MYSQLI_ASSOC)) {
@@ -7779,7 +7779,7 @@ $excel -> setActiveSheetIndex(2)
 
 $count_total_laguna_rts = 0;
 
-$sql_total_laguna_rts = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_area = 'LAGUNA' AND record_status = 'RTS' AND record_reason_rts != 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_laguna_rts = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_area = 'LAGUNA' AND record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_laguna_rts = mysqli_query($db_conn, $sql_total_laguna_rts);
 if($query_total_laguna_rts) {
     while ($row = mysqli_fetch_array($query_total_laguna_rts, MYSQLI_ASSOC)) {
@@ -7804,7 +7804,7 @@ $excel -> setActiveSheetIndex(2)
 
 $count_total_laguna_oos = 0;
 
-$sql_total_laguna_oos = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_area = 'LAGUNA' AND record_reason_rts = 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_laguna_oos = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_area = 'LAGUNA' AND record_reason_rts LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_laguna_oos = mysqli_query($db_conn, $sql_total_laguna_oos);
 if($query_total_laguna_oos) {
     while ($row = mysqli_fetch_array($query_total_laguna_oos, MYSQLI_ASSOC)) {

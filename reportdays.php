@@ -1954,7 +1954,7 @@ $excel -> setActiveSheetIndex(0)
         -> getStyle('W'.$count)
         -> applyFromArray($border);
 
-$sql_total_pque_rts = "SELECT * FROM ppbms_record WHERE record_area = 'PARANAQUE' AND record_status = 'RTS' AND record_reason_rts != 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_pque_rts = "SELECT * FROM ppbms_record WHERE record_area = 'PARANAQUE' AND record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_pque_rts = mysqli_query($db_conn, $sql_total_pque_rts);
 $count_total_pque_rts = mysqli_num_rows($query_total_pque_rts);
 
@@ -1973,7 +1973,7 @@ $excel -> setActiveSheetIndex(0)
         -> getStyle('X'.$count)
         -> applyFromArray($border);
 
-$sql_total_pque_oos = "SELECT * FROM ppbms_record WHERE record_area = 'PARANAQUE' AND record_status = 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_pque_oos = "SELECT * FROM ppbms_record WHERE record_area = 'PARANAQUE' AND record_reason_rts LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_pque_oos = mysqli_query($db_conn, $sql_total_pque_oos);
 $count_total_pque_oos = mysqli_num_rows($query_total_pque_oos);
 
@@ -2467,7 +2467,7 @@ $excel -> setActiveSheetIndex(0)
         -> getStyle('W'.$count)
         -> applyFromArray($border);
 
-$sql_total_lpnas_rts = "SELECT * FROM ppbms_record WHERE (record_area = 'LASPINAS' OR record_area = 'LAS PINAS') AND record_status = 'RTS' AND record_reason_rts != 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_lpnas_rts = "SELECT * FROM ppbms_record WHERE (record_area = 'LASPINAS' OR record_area = 'LAS PINAS') AND record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_lpnas_rts = mysqli_query($db_conn, $sql_total_lpnas_rts);
 $count_total_lpnas_rts = mysqli_num_rows($query_total_lpnas_rts);
 
@@ -2486,7 +2486,7 @@ $excel -> setActiveSheetIndex(0)
         -> getStyle('X'.$count)
         -> applyFromArray($border);
 
-$sql_total_lpnas_oos = "SELECT * FROM ppbms_record WHERE (record_area = 'LASPINAS' OR record_area = 'LAS PINAS') AND record_status = 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_lpnas_oos = "SELECT * FROM ppbms_record WHERE (record_area = 'LASPINAS' OR record_area = 'LAS PINAS') AND record_reason_rts LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_lpnas_oos = mysqli_query($db_conn, $sql_total_lpnas_oos);
 $count_total_lpnas_oos = mysqli_num_rows($query_total_lpnas_oos);
 
@@ -2980,7 +2980,7 @@ $excel -> setActiveSheetIndex(0)
         -> getStyle('W'.$count)
         -> applyFromArray($border);
 
-$sql_total_mlupa_rts = "SELECT * FROM ppbms_record WHERE record_area = 'MUNTINLUPA' AND record_status = 'RTS' AND record_reason_rts != 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_mlupa_rts = "SELECT * FROM ppbms_record WHERE record_area = 'MUNTINLUPA' AND record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_mlupa_rts = mysqli_query($db_conn, $sql_total_mlupa_rts);
 $count_total_mlupa_rts = mysqli_num_rows($query_total_mlupa_rts);
 
@@ -2999,7 +2999,7 @@ $excel -> setActiveSheetIndex(0)
         -> getStyle('X'.$count)
         -> applyFromArray($border);
 
-$sql_total_mlupa_oos = "SELECT * FROM ppbms_record WHERE record_area = 'MUNTINLUPA' AND record_status = 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_mlupa_oos = "SELECT * FROM ppbms_record WHERE record_area = 'MUNTINLUPA' AND record_reason_rts LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_mlupa_oos = mysqli_query($db_conn, $sql_total_mlupa_oos);
 $count_total_mlupa_oos = mysqli_num_rows($query_total_mlupa_oos);
 
@@ -3493,7 +3493,7 @@ $excel -> setActiveSheetIndex(0)
         -> getStyle('W'.$count)
         -> applyFromArray($border);
 
-$sql_total_mkna_rts = "SELECT * FROM ppbms_record WHERE record_area = 'MARIKINA' AND record_status = 'RTS' AND record_reason_rts != 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_mkna_rts = "SELECT * FROM ppbms_record WHERE record_area = 'MARIKINA' AND record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_mkna_rts = mysqli_query($db_conn, $sql_total_mkna_rts);
 $count_total_mkna_rts = mysqli_num_rows($query_total_mkna_rts);
 
@@ -3512,7 +3512,7 @@ $excel -> setActiveSheetIndex(0)
         -> getStyle('X'.$count)
         -> applyFromArray($border);
 
-$sql_total_mkna_oos = "SELECT * FROM ppbms_record WHERE record_area = 'MARIKINA' AND record_status = 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_mkna_oos = "SELECT * FROM ppbms_record WHERE record_area = 'MARIKINA' AND record_reason_rts LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_mkna_oos = mysqli_query($db_conn, $sql_total_mkna_oos);
 $count_total_mkna_oos = mysqli_num_rows($query_total_mkna_oos);
 
@@ -4006,7 +4006,7 @@ $excel -> setActiveSheetIndex(0)
         -> getStyle('W'.$count)
         -> applyFromArray($border);
 
-$sql_total_rizal_rts = "SELECT * FROM ppbms_record WHERE record_area = 'RIZAL' AND record_status = 'RTS' AND record_reason_rts != 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_rizal_rts = "SELECT * FROM ppbms_record WHERE record_area = 'RIZAL' AND record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_rizal_rts = mysqli_query($db_conn, $sql_total_rizal_rts);
 $count_total_rizal_rts = mysqli_num_rows($query_total_rizal_rts);
 
@@ -4025,7 +4025,7 @@ $excel -> setActiveSheetIndex(0)
         -> getStyle('X'.$count)
         -> applyFromArray($border);
 
-$sql_total_rizal_oos = "SELECT * FROM ppbms_record WHERE record_area = 'RIZAL' AND record_status = 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_rizal_oos = "SELECT * FROM ppbms_record WHERE record_area = 'RIZAL' AND record_reason_rts LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_rizal_oos = mysqli_query($db_conn, $sql_total_rizal_oos);
 $count_total_rizal_oos = mysqli_num_rows($query_total_rizal_oos);
 
@@ -4519,7 +4519,7 @@ $excel -> setActiveSheetIndex(0)
         -> getStyle('W'.$count)
         -> applyFromArray($border);
 
-$sql_total_laguna_rts = "SELECT * FROM ppbms_record WHERE record_area = 'LAGUNA' AND record_status = 'RTS' AND record_reason_rts != 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_laguna_rts = "SELECT * FROM ppbms_record WHERE record_area = 'LAGUNA' AND record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_laguna_rts = mysqli_query($db_conn, $sql_total_laguna_rts);
 $count_total_laguna_rts = mysqli_num_rows($query_total_laguna_rts);
 
@@ -4538,7 +4538,7 @@ $excel -> setActiveSheetIndex(0)
         -> getStyle('X'.$count)
         -> applyFromArray($border);
 
-$sql_total_laguna_oos = "SELECT * FROM ppbms_record WHERE record_area = 'LAGUNA' AND record_status = 'OUT OF SCOPE' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+$sql_total_laguna_oos = "SELECT * FROM ppbms_record WHERE record_area = 'LAGUNA' AND record_reason_rts LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
 $query_total_laguna_oos = mysqli_query($db_conn, $sql_total_laguna_oos);
 $count_total_laguna_oos = mysqli_num_rows($query_total_laguna_oos);
 
