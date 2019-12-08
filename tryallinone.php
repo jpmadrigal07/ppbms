@@ -61,6 +61,56 @@ $border = array(
   )
 );
 
+$borderWhite = array(
+  'borders' => array(
+    'allborders' => array(
+      'style' => PHPExcel_Style_Border::BORDER_THIN,
+      'color' => array('rgb' => 'FFFFFF')
+    )
+  )
+);
+
+$blackCalibriItalic = array(
+    'font'  => array(
+        'bold'  => false,
+        'italic' => true,
+        'color' => array('rgb' => '000000'),
+        'size'  => 11,
+        'name'  => 'Calibri'
+    ));
+
+$whiteCalibri = array(
+    'font'  => array(
+        'bold'  => true,
+        'color' => array('rgb' => 'FFFFFF'),
+        'size'  => 11,
+        'name'  => 'Calibri'
+    ));
+
+$blackCalibri = array(
+    'font'  => array(
+        'bold'  => true,
+        'color' => array('rgb' => '000000'),
+        'size'  => 11,
+        'name'  => 'Calibri'
+    ));
+
+$blackCalibriThin = array(
+    'font'  => array(
+        'bold'  => false,
+        'color' => array('rgb' => '000000'),
+        'size'  => 11,
+        'name'  => 'Calibri'
+    ));
+
+$redCalibri = array(
+    'font'  => array(
+        'bold'  => true,
+        'color' => array('rgb' => 'FF0000'),
+        'size'  => 11,
+        'name'  => 'Calibri'
+    ));  
+
 // POST
 
 $sender = $_POST['sender'];
@@ -1344,7 +1394,6 @@ $excel->setActiveSheetIndex(1)->getColumnDimension('K')->setWidth(9);
 // DATA LOOP
 
 $countStart = 4;
-$footerCount = $countSummary+4;
 $totalCountNCR = 0;
 $totalCountPROV = 0;
 $totalVolume1 = 0;
@@ -9516,6 +9565,1515 @@ $excel -> setActiveSheetIndex(2)
         -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
         -> getStartColor()
         -> setRGB('f2f2f2');
+
+// FOURTH SHEET
+
+// Create a new worksheet, after the default sheet
+$excel->createSheet();
+
+//SHEET NAME
+
+$excel -> setActiveSheetIndex(3) 
+        -> setTitle('Disbursement Summary Report');
+
+//TOP HEADER
+
+$excel -> setActiveSheetIndex(3) 
+        -> mergeCells('A1:C1');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('A1','Disbursement Summary Report') 
+        -> getStyle('A1')
+        -> applyFromArray($blackCalibriItalic);
+
+//TABLE HEADER
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('A3','Job Order/COM')
+        -> getStyle('A3')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('A3')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('A3:A5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('A3')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> mergeCells('A3:A5');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('B3','Pick up Date')
+        -> getStyle('B3')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('B3')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('B3:B5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('B3')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> mergeCells('B3:B5');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('C3','Volume Pick up on COM')
+        -> getStyle('C3')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('C3')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('C3:C5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('C3')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> mergeCells('C3:C5');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('D3','Grand Total Delivered')
+        -> getStyle('D3')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('D3')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('D3:D5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('D3')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> mergeCells('D3:D5');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('E3','Total RTS')
+        -> getStyle('E3')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('E3')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('E3:E5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('E3')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> mergeCells('E3:E5');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('F3','Details')
+        -> getStyle('F3')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('F3')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('F3:Q3')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('F3')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> mergeCells('F3:Q3');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('F4','NCR')
+        -> getStyle('F4')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('F4')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('F4:K4')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('F4')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> mergeCells('F4:K4');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('L4','PROVINCIAL')
+        -> getStyle('L4')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('L4')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('L4:Q4')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('L4')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> mergeCells('L4:Q4');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('F5','Successful')
+        -> getStyle('F5')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('F5')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('F5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('F5')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('G5','RTS')
+        -> getStyle('G5')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('G5')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('G5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('G5')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('H5','OS')
+        -> getStyle('H5')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('H5')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('H5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('H5')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('I5','Total Pick-up')
+        -> getStyle('I5')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('I5')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('I5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('I5')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('J5','Total Delivered')
+        -> getStyle('J5')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('J5')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('J5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('J5')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('K5','Amount/Rate at P 9.00')
+        -> getStyle('K5')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('K5')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('K5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('K5')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+        $excel -> setActiveSheetIndex(3) 
+        -> setCellValue('L5','Successful')
+        -> getStyle('L5')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('L5')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('L5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('L5')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('M5','RTS')
+        -> getStyle('M5')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('M5')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('M5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('M5')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('N5','OS')
+        -> getStyle('N5')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('N5')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('N5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('N5')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('O5','Total Pick-up')
+        -> getStyle('O5')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('O5')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('O5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('O5')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('P5','Total Delivered')
+        -> getStyle('P5')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('P5')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('P5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('P5')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('Q5','Amount/Rate at P 10.00')
+        -> getStyle('Q5')
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('Q5')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('Q5')
+        -> applyFromArray($borderWhite);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('Q5')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel->setActiveSheetIndex(3)->getColumnDimension('A')->setWidth(20);
+$excel->setActiveSheetIndex(3)->getColumnDimension('B')->setWidth(12);
+$excel->setActiveSheetIndex(3)->getColumnDimension('C')->setWidth(23);
+$excel->setActiveSheetIndex(3)->getColumnDimension('D')->setWidth(23);
+$excel->setActiveSheetIndex(3)->getColumnDimension('E')->setWidth(10);
+$excel->setActiveSheetIndex(3)->getColumnDimension('F')->setWidth(10);
+$excel->setActiveSheetIndex(3)->getColumnDimension('G')->setWidth(8);
+$excel->setActiveSheetIndex(3)->getColumnDimension('H')->setWidth(6);
+$excel->setActiveSheetIndex(3)->getColumnDimension('I')->setWidth(13);
+$excel->setActiveSheetIndex(3)->getColumnDimension('J')->setWidth(15);
+$excel->setActiveSheetIndex(3)->getColumnDimension('K')->setWidth(23);
+$excel->setActiveSheetIndex(3)->getColumnDimension('L')->setWidth(10);
+$excel->setActiveSheetIndex(3)->getColumnDimension('M')->setWidth(8);
+$excel->setActiveSheetIndex(3)->getColumnDimension('N')->setWidth(6);
+$excel->setActiveSheetIndex(3)->getColumnDimension('O')->setWidth(13);
+$excel->setActiveSheetIndex(3)->getColumnDimension('P')->setWidth(15);
+$excel->setActiveSheetIndex(3)->getColumnDimension('Q')->setWidth(23);
+
+// DATA LOOP
+
+$countStart = 5;
+$totalDeliveredFinal = 0;
+$totalRTSFinal = 0;
+$totalDeliveredNCR = 0;
+$totalRTSNCR = 0;
+$totalOOSNCR = 0;
+$totalPickupNCR = 0;
+$totalPickupNCRFinal = 0;
+$totalSuccessfulRTSNCR = 0;
+$totalSuccessfulRTSNCRFinal = 0;
+$totalSuccessfulRTSNCRPayment = 0;
+$totalSuccessfulRTSNCRPaymentFinal = 0;
+$totalDeliveredProv = 0;
+$totalRTSProv = 0;
+$totalOOSProv = 0;
+$totalPickupProv = 0;
+$totalPickupProvFinal = 0;
+$totalSuccessfulRTSProv = 0;
+$totalSuccessfulRTSProvFinal = 0;
+$totalSuccessfulRTSProvPayment = 0;
+$totalSuccessfulRTSProvPaymentFinal = 0;
+
+
+for($i1=0; $i1<$countSummary; $i1++) {
+    $summaryArray = explode(',', $_POST['checkboxsummary'][$i1]);
+    $cyclecode = $summaryArray[0];
+    $pud = $summaryArray[1];
+    $countStart++;
+
+    // COUNT PROVINCIAL VOLUME END
+
+    $excel -> setActiveSheetIndex(3) 
+        -> setCellValue('A'.$countStart,$cyclecode)
+        -> getStyle('A'.$countStart)
+        -> applyFromArray($blackCalibriThin);
+
+    $excel -> setActiveSheetIndex(3) 
+        -> getStyle('A'.$countStart)
+        -> applyFromArray($centerText);
+
+    $excel -> setActiveSheetIndex(3) 
+        -> getStyle('A'.$countStart)
+        -> applyFromArray($border);
+
+    $excel -> setActiveSheetIndex(3) 
+        -> getStyle('A'.$countStart)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('ddd9c4');
+
+    // DIVIDER
+
+    $excel -> setActiveSheetIndex(3) 
+        -> setCellValue('B'.$countStart,$pud)
+        -> getStyle('B'.$countStart)
+        -> applyFromArray($blackCalibriThin);
+
+    $excel -> setActiveSheetIndex(3) 
+        -> getStyle('B'.$countStart)
+        -> applyFromArray($centerText);
+
+    $excel -> setActiveSheetIndex(3) 
+        -> getStyle('B'.$countStart)
+        -> applyFromArray($border);
+
+    $excel -> setActiveSheetIndex(3) 
+        -> getStyle('B'.$countStart)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('ddd9c4');
+
+    // DIVIDER
+
+    $count_volume = 0;
+
+    $sql_volume = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+    $query_volume = mysqli_query($db_conn, $sql_volume);
+    if($query_volume) {
+        while ($row = mysqli_fetch_array($query_volume, MYSQLI_ASSOC)) {
+            $count_volume = $row["counter"];
+        }
+    }
+
+    $excel -> setActiveSheetIndex(3) 
+        -> setCellValue('C'.$countStart,$count_volume)
+        -> getStyle('C'.$countStart)
+        -> applyFromArray($blackCalibri);
+
+    $excel -> setActiveSheetIndex(3) 
+        -> getStyle('C'.$countStart)
+        -> applyFromArray($centerText);
+
+    $excel -> setActiveSheetIndex(3) 
+        -> getStyle('C'.$countStart)
+        -> applyFromArray($border);
+   
+    $excel -> setActiveSheetIndex(3) 
+        -> getStyle('C'.$countStart)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('FFFFFF');
+
+    // DIVIDER
+
+    $count_delivered = 0;
+
+    $sql_delivered = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_status = 'DELIVERED' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+    $query_delivered = mysqli_query($db_conn, $sql_delivered);
+    if($query_delivered) {
+        while ($row = mysqli_fetch_array($query_delivered, MYSQLI_ASSOC)) {
+            $count_delivered = $row["counter"];
+        }
+    }
+
+    $totalDeliveredFinal = $totalDeliveredFinal+$count_delivered;
+
+    $excel -> setActiveSheetIndex(3) 
+            -> setCellValue('D'.$countStart,$count_delivered)
+            -> getStyle('D'.$countStart)
+            -> applyFromArray($blackCalibri);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('D'.$countStart)
+            -> applyFromArray($centerText);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('D'.$countStart)
+            -> applyFromArray($border);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('D'.$countStart)
+            -> getFill()
+            -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+            -> getStartColor()
+            -> setRGB('FFFFFF');
+
+    // DIVIDER
+
+    $count_rts = 0;
+
+    $sql_rts = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+    $query_rts = mysqli_query($db_conn, $sql_rts);
+    if($query_rts) {
+        while ($row = mysqli_fetch_array($query_rts, MYSQLI_ASSOC)) {
+            $count_rts = $row["counter"];
+        }
+    }
+
+    $totalRTSFinal = $totalRTSFinal+$count_rts;
+
+    $excel -> setActiveSheetIndex(3) 
+        -> setCellValue('E'.$countStart,$count_rts)
+        -> getStyle('E'.$countStart)
+        -> applyFromArray($topHeaderStyleFontBlackCalibri1);
+
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('E'.$countStart)
+            -> applyFromArray($centerText);
+
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('E'.$countStart)
+            -> applyFromArray($border);
+
+    // DIVIDER
+
+    $count_delivered_ncr = 0;
+
+    $sql_delivered_ncr = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_status = 'DELIVERED' AND (record_area = 'PARANAQUE' OR record_area = 'PARA?AQUE' OR record_area = 'PARAÑAQUE' OR record_area = 'MARIKINA' OR record_area = 'MUNTINLUPA' OR record_area = 'LASPINAS' OR record_area = 'LAS PINAS') AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+    $query_delivered_ncr = mysqli_query($db_conn, $sql_delivered_ncr);
+    if($query_delivered_ncr) {
+        while ($row = mysqli_fetch_array($query_delivered_ncr, MYSQLI_ASSOC)) {
+            $count_delivered_ncr = $row["counter"];
+        }
+    }
+
+    $totalDeliveredNCR = $totalDeliveredNCR+$count_delivered_ncr;
+
+    $excel -> setActiveSheetIndex(3) 
+            -> setCellValue('F'.$countStart,$count_delivered_ncr)
+            -> getStyle('F'.$countStart)
+            -> applyFromArray($blackCalibriThin);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('F'.$countStart)
+            -> applyFromArray($centerText);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('F'.$countStart)
+            -> applyFromArray($border);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('F'.$countStart)
+            -> getFill()
+            -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+            -> getStartColor()
+            -> setRGB('ddd9c4');
+
+    // DIVIDER
+
+    $count_rts_ncr = 0;
+
+    $sql_rts_ncr = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND (record_area = 'PARANAQUE' OR record_area = 'PARA?AQUE' OR record_area = 'PARAÑAQUE' OR record_area = 'MARIKINA' OR record_area = 'MUNTINLUPA' OR record_area = 'LASPINAS' OR record_area = 'LAS PINAS') AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+    $query_rts_ncr = mysqli_query($db_conn, $sql_rts_ncr);
+    if($query_rts_ncr) {
+        while ($row = mysqli_fetch_array($query_rts_ncr, MYSQLI_ASSOC)) {
+            $count_rts_ncr = $row["counter"];
+        }
+    }
+
+    $totalRTSNCR = $totalRTSNCR+$count_rts_ncr;
+
+    $excel -> setActiveSheetIndex(3) 
+            -> setCellValue('G'.$countStart,$count_rts_ncr)
+            -> getStyle('G'.$countStart)
+            -> applyFromArray($blackCalibriThin);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('G'.$countStart)
+            -> applyFromArray($centerText);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('G'.$countStart)
+            -> applyFromArray($border);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('G'.$countStart)
+            -> getFill()
+            -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+            -> getStartColor()
+            -> setRGB('ddd9c4');
+
+    // DIVIDER
+
+    $count_oos_ncr = 0;
+
+    $sql_oos_ncr = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_status = 'RTS' AND record_reason_rts LIKE '%OUT OF SCOPE%' AND (record_area = 'PARANAQUE' OR record_area = 'PARA?AQUE' OR record_area = 'PARAÑAQUE' OR record_area = 'MARIKINA' OR record_area = 'MUNTINLUPA' OR record_area = 'LASPINAS' OR record_area = 'LAS PINAS') AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+    $query_oos_ncr = mysqli_query($db_conn, $sql_oos_ncr);
+    if($query_oos_ncr) {
+        while ($row = mysqli_fetch_array($query_oos_ncr, MYSQLI_ASSOC)) {
+            $count_oos_ncr = $row["counter"];
+        }
+    }
+
+    $totalOOSNCR = $totalOOSNCR+$count_oos_ncr;
+
+    $excel -> setActiveSheetIndex(3) 
+            -> setCellValue('H'.$countStart,$count_oos_ncr)
+            -> getStyle('H'.$countStart)
+            -> applyFromArray($blackCalibriThin);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('H'.$countStart)
+            -> applyFromArray($centerText);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('H'.$countStart)
+            -> applyFromArray($border);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('H'.$countStart)
+            -> getFill()
+            -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+            -> getStartColor()
+            -> setRGB('ddd9c4');
+
+    $totalPickupNCR = $count_delivered_ncr+$count_rts_ncr+$count_oos_ncr;
+    $totalPickupNCRFinal = $totalPickupNCRFinal+$totalPickupNCR;
+
+    $excel -> setActiveSheetIndex(3) 
+            -> setCellValue('I'.$countStart,$totalPickupNCR)
+            -> getStyle('I'.$countStart)
+            -> applyFromArray($blackCalibriThin);
+
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('I'.$countStart)
+            -> applyFromArray($centerText);
+
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('I'.$countStart)
+            -> applyFromArray($border);
+
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('I'.$countStart)
+            -> getFill()
+            -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+            -> getStartColor()
+            -> setRGB('FFFFFF');
+
+    $totalSuccessfulRTSNCR = $count_delivered_ncr+$count_rts_ncr;
+    $totalSuccessfulRTSNCRFinal = $totalSuccessfulRTSNCRFinal+$totalSuccessfulRTSNCR;
+
+    $excel -> setActiveSheetIndex(3) 
+            -> setCellValue('J'.$countStart,$totalSuccessfulRTSNCR)
+            -> getStyle('J'.$countStart)
+            -> applyFromArray($blackCalibriThin);
+
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('J'.$countStart)
+            -> applyFromArray($centerText);
+
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('J'.$countStart)
+            -> applyFromArray($border);
+
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('J'.$countStart)
+            -> getFill()
+            -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+            -> getStartColor()
+            -> setRGB('FFFFFF');
+
+    $totalSuccessfulRTSNCRPayment = $totalSuccessfulRTSNCR*$pqueprice;
+    $totalSuccessfulRTSNCRPaymentFinal = $totalSuccessfulRTSNCRPaymentFinal+$totalSuccessfulRTSNCRPayment;
+
+    $excel -> setActiveSheetIndex(3) 
+            -> setCellValue('K'.$countStart,number_format($totalSuccessfulRTSNCRPayment))
+            -> getStyle('K'.$countStart)
+            -> applyFromArray($blackCalibriThin);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('K'.$countStart)
+            -> applyFromArray($centerText);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('K'.$countStart)
+            -> applyFromArray($border);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('K'.$countStart)
+            -> getFill()
+            -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+            -> getStartColor()
+            -> setRGB('e4dfec');
+
+    // DIVIDER
+
+    $count_delivered_prov = 0;
+
+    $sql_delivered_prov = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_status = 'DELIVERED' AND (record_area = 'LAGUNA' OR record_area = 'RIZAL') AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+    $query_delivered_prov = mysqli_query($db_conn, $sql_delivered_prov);
+    if($query_delivered_prov) {
+        while ($row = mysqli_fetch_array($query_delivered_prov, MYSQLI_ASSOC)) {
+            $count_delivered_prov = $row["counter"];
+        }
+    }
+
+    $totalDeliveredProv = $totalDeliveredProv+$count_delivered_prov;
+
+    $excel -> setActiveSheetIndex(3) 
+            -> setCellValue('L'.$countStart,$count_delivered_prov)
+            -> getStyle('L'.$countStart)
+            -> applyFromArray($blackCalibriThin);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('L'.$countStart)
+            -> applyFromArray($centerText);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('L'.$countStart)
+            -> applyFromArray($border);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('L'.$countStart)
+            -> getFill()
+            -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+            -> getStartColor()
+            -> setRGB('ddd9c4');
+
+    // DIVIDER
+
+    $count_rts_prov = 0;
+
+    $sql_rts_prov = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_status = 'RTS' AND record_reason_rts NOT LIKE '%OUT OF SCOPE%' AND (record_area = 'LAGUNA' OR record_area = 'RIZAL') AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+    $query_rts_prov = mysqli_query($db_conn, $sql_rts_prov);
+    if($query_rts_prov) {
+        while ($row = mysqli_fetch_array($query_rts_prov, MYSQLI_ASSOC)) {
+            $count_rts_prov = $row["counter"];
+        }
+    }
+
+    $totalRTSProv = $totalRTSProv+$count_rts_prov;
+
+    $excel -> setActiveSheetIndex(3) 
+            -> setCellValue('M'.$countStart,$count_rts_prov)
+            -> getStyle('M'.$countStart)
+            -> applyFromArray($blackCalibriThin);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('M'.$countStart)
+            -> applyFromArray($centerText);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('M'.$countStart)
+            -> applyFromArray($border);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('M'.$countStart)
+            -> getFill()
+            -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+            -> getStartColor()
+            -> setRGB('ddd9c4');
+
+    // DIVIDER
+
+    $count_oos_prov = 0;
+
+    $sql_oos_prov = "SELECT COUNT(id) AS counter FROM ppbms_record WHERE record_sender='$sender' AND record_deltype='$deltype' AND record_month='$month' AND record_year='$year' AND record_status = 'RTS' AND record_reason_rts LIKE '%OUT OF SCOPE%' AND (record_area = 'LAGUNA' OR record_area = 'RIZAL') AND record_cycle_code='$cyclecode' AND record_pud='$pud' AND record_status_status='1'";
+    $query_oos_prov = mysqli_query($db_conn, $sql_oos_prov);
+    if($query_oos_prov) {
+        while ($row = mysqli_fetch_array($query_oos_prov, MYSQLI_ASSOC)) {
+            $count_oos_prov = $row["counter"];
+        }
+    }
+
+    $totalOOSProv = $totalOOSProv+$count_oos_prov;
+
+    $excel -> setActiveSheetIndex(3) 
+            -> setCellValue('N'.$countStart,$count_oos_prov)
+            -> getStyle('N'.$countStart)
+            -> applyFromArray($blackCalibriThin);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('N'.$countStart)
+            -> applyFromArray($centerText);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('N'.$countStart)
+            -> applyFromArray($border);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('N'.$countStart)
+            -> getFill()
+            -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+            -> getStartColor()
+            -> setRGB('ddd9c4');
+
+    $totalPickupProv = $count_delivered_prov+$count_rts_prov+$count_oos_prov;
+    $totalPickupProvFinal = $totalPickupProvFinal+$totalPickupProv;
+
+    $excel -> setActiveSheetIndex(3) 
+            -> setCellValue('O'.$countStart,$totalPickupProv)
+            -> getStyle('O'.$countStart)
+            -> applyFromArray($blackCalibriThin);
+
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('O'.$countStart)
+            -> applyFromArray($centerText);
+
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('O'.$countStart)
+            -> applyFromArray($border);
+
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('O'.$countStart)
+            -> getFill()
+            -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+            -> getStartColor()
+            -> setRGB('FFFFFF');
+
+    $totalSuccessfulRTSProv = $count_delivered_prov+$count_rts_prov;
+    $totalSuccessfulRTSProvFinal = $totalSuccessfulRTSProvFinal+$totalSuccessfulRTSProv;
+
+    $excel -> setActiveSheetIndex(3) 
+            -> setCellValue('P'.$countStart,$totalSuccessfulRTSProv)
+            -> getStyle('P'.$countStart)
+            -> applyFromArray($blackCalibriThin);
+
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('P'.$countStart)
+            -> applyFromArray($centerText);
+
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('P'.$countStart)
+            -> applyFromArray($border);
+
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('P'.$countStart)
+            -> getFill()
+            -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+            -> getStartColor()
+            -> setRGB('FFFFFF');
+
+    $totalSuccessfulRTSProvPayment = $totalSuccessfulRTSProv*$rizalprice;
+    $totalSuccessfulRTSProvPaymentFinal = $totalSuccessfulRTSProvPaymentFinal+$totalSuccessfulRTSProvPayment;
+
+    $excel -> setActiveSheetIndex(3) 
+            -> setCellValue('Q'.$countStart,number_format($totalSuccessfulRTSProvPayment))
+            -> getStyle('Q'.$countStart)
+            -> applyFromArray($blackCalibriThin);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('Q'.$countStart)
+            -> applyFromArray($centerText);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('Q'.$countStart)
+            -> applyFromArray($border);
+    
+    $excel -> setActiveSheetIndex(3) 
+            -> getStyle('Q'.$countStart)
+            -> getFill()
+            -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+            -> getStartColor()
+            -> setRGB('e4dfec');
+
+}
+
+// FOOTER
+
+$countStartAddOne = $countStart+2;
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('A'.$countStartAddOne,'NCR')
+        -> getStyle('A'.$countStartAddOne)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('A'.$countStartAddOne)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('A'.$countStartAddOne)
+        -> applyFromArray($border);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('A'.$countStartAddOne)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('B'.$countStartAddOne)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('C'.$countStartAddOne,$totalPickupNCRFinal)
+        -> getStyle('C'.$countStartAddOne)
+        -> applyFromArray($blackCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('C'.$countStartAddOne)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('C'.$countStartAddOne)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('FFFFFF');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('C'.$countStartAddOne.':Q'.$countStartAddOne)
+        -> applyFromArray($border);
+
+$countStartAddTwo = $countStartAddOne+1;
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('A'.$countStartAddTwo,'PROVINCIAL')
+        -> getStyle('A'.$countStartAddTwo)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('A'.$countStartAddTwo)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('A'.$countStartAddTwo)
+        -> applyFromArray($border);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('A'.$countStartAddTwo)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('B'.$countStartAddTwo)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('C'.$countStartAddTwo,$totalPickupProvFinal)
+        -> getStyle('C'.$countStartAddTwo)
+        -> applyFromArray($blackCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('C'.$countStartAddTwo)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('C'.$countStartAddTwo)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('FFFFFF');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('C'.$countStartAddTwo.':Q'.$countStartAddTwo)
+        -> applyFromArray($border);
+
+$countStartAddThree = $countStartAddTwo+1;
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('A'.$countStartAddThree,'TOTAL')
+        -> getStyle('A'.$countStartAddThree)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('A'.$countStartAddThree)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('A'.$countStartAddThree)
+        -> applyFromArray($border);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('A'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('B'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('C'.$countStartAddThree,$totalPickupNCRFinal+$totalPickupProvFinal)
+        -> getStyle('C'.$countStartAddThree)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('C'.$countStartAddThree)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('C'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('D'.$countStartAddThree,$totalDeliveredFinal)
+        -> getStyle('D'.$countStartAddThree)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('D'.$countStartAddThree)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('D'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('E'.$countStartAddThree,$totalRTSFinal)
+        -> getStyle('E'.$countStartAddThree)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('E'.$countStartAddThree)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('E'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('F'.$countStartAddThree,$totalDeliveredNCR)
+        -> getStyle('F'.$countStartAddThree)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('F'.$countStartAddThree)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('F'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('G'.$countStartAddThree,$totalRTSNCR)
+        -> getStyle('G'.$countStartAddThree)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('G'.$countStartAddThree)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('G'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('H'.$countStartAddThree,$totalOOSNCR)
+        -> getStyle('H'.$countStartAddThree)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('H'.$countStartAddThree)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('H'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('I'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('J'.$countStartAddThree,$totalSuccessfulRTSNCRFinal)
+        -> getStyle('J'.$countStartAddThree)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('J'.$countStartAddThree)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('J'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('K'.$countStartAddThree,number_format($totalSuccessfulRTSNCRPaymentFinal))
+        -> getStyle('K'.$countStartAddThree)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('K'.$countStartAddThree)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('K'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('L'.$countStartAddThree,$totalDeliveredProv)
+        -> getStyle('L'.$countStartAddThree)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('L'.$countStartAddThree)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('L'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('M'.$countStartAddThree,$totalRTSProv)
+        -> getStyle('M'.$countStartAddThree)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('M'.$countStartAddThree)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('M'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('N'.$countStartAddThree,$totalOOSProv)
+        -> getStyle('N'.$countStartAddThree)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('N'.$countStartAddThree)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('N'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('O'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('P'.$countStartAddThree,$totalSuccessfulRTSProvFinal)
+        -> getStyle('P'.$countStartAddThree)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('P'.$countStartAddThree)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('P'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('Q'.$countStartAddThree,number_format($totalSuccessfulRTSProvPaymentFinal))
+        -> getStyle('Q'.$countStartAddThree)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('Q'.$countStartAddThree)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('Q'.$countStartAddThree)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$countStartAddFour = $countStartAddThree+1;
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('K'.$countStartAddFour, number_format($totalSuccessfulRTSNCRPaymentFinal*0.12))
+        -> getStyle('K'.$countStartAddFour)
+        -> applyFromArray($blackCalibriThin);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('K'.$countStartAddFour)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('Q'.$countStartAddFour, number_format($totalSuccessfulRTSProvPaymentFinal*0.12))
+        -> getStyle('Q'.$countStartAddFour)
+        -> applyFromArray($blackCalibriThin);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('Q'.$countStartAddFour)
+        -> applyFromArray($centerText);
+
+$countStartAddFive = $countStartAddFour+1;
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('A'.$countStartAddFive,'GRAND TOTAL')
+        -> getStyle('A'.$countStartAddFive)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('A'.$countStartAddFive)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('A'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('B'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('C'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('D'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('E'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('F'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('G'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('H'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('I'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('J'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$grandTotalNCR = $totalSuccessfulRTSNCRPaymentFinal+($totalSuccessfulRTSNCRPaymentFinal*0.12);
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('K'.$countStartAddFive,number_format($grandTotalNCR))
+        -> getStyle('K'.$countStartAddFive)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('K'.$countStartAddFive)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('K'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('L'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('M'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('N'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('O'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('P'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$grandTotalProv = $totalSuccessfulRTSProvPaymentFinal+($totalSuccessfulRTSProvPaymentFinal*0.12);
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('Q'.$countStartAddFive,number_format($grandTotalProv))
+        -> getStyle('Q'.$countStartAddFive)
+        -> applyFromArray($whiteCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('Q'.$countStartAddFive)
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('Q'.$countStartAddFive)
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('000000');
+
+$excel -> setActiveSheetIndex(3) 
+        -> setCellValue('R'.$countStartAddFive, number_format($grandTotalProv+$grandTotalNCR))
+        -> getStyle('R'.$countStartAddFive)
+        -> applyFromArray($redCalibri);
+
+$excel -> setActiveSheetIndex(3) 
+        -> getStyle('R'.$countStartAddFive)
+        -> applyFromArray($centerText);
+
 
 function get_percentage($total, $number){
   if ( $total > 0 ) {
