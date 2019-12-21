@@ -674,7 +674,12 @@ $toInsert = array();
 $data=array();
 
 for($i=0; $i<$countSummary; $i++) {
-    $summaryArray = explode(',', $_POST['checkboxsummary'][$i]);
+    $summaryArray;
+    if($countSummary === 1) {
+        $summaryArray = explode(',', $_POST['checkboxsummary'][0]);
+    } else if($countSummary > 1) {
+        $summaryArray = explode(',', $_POST['checkboxsummary'][$i]);
+    }
     $cyclecode = $summaryArray[0];
     $pud = $summaryArray[1];
     $recnum = 0;
@@ -4165,7 +4170,13 @@ $countSummary = count($_POST['checkboxsummary']);
 $count = 10;
 
 for($i=0; $i<$countSummary; $i++) {
-    $summaryArray = explode(',', $_POST['checkboxsummary'][$i]);
+    $summaryArray;
+    if($countSummary === 1) {
+        $summaryArray = explode(',', $_POST['checkboxsummary'][0]);
+    } else if($countSummary > 1) {
+        $summaryArray = explode(',', $_POST['checkboxsummary'][$i]);
+    }
+    
     $cyclecode = $summaryArray[0];
     $pud = $summaryArray[1];
 
