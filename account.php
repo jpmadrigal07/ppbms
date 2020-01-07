@@ -1275,8 +1275,10 @@ if(
 									    $newDate = date("F d, Y", strtotime($date));
 									    $newDateUpdate = date("m/d/y", strtotime($date));
 									    $newDateUpdate1 = date("n/j/y", strtotime($date));
+									    $newDateUpdate2 = date("m/d/Y", strtotime($date));
+									    $newDateUpdate3 = date("n/j/Y", strtotime($date));
 
-									    $sql_check_record_count = "SELECT id FROM ppbms_record WHERE messenger_id = '$recordidview' AND record_sender = '$sender' AND record_deltype = '$deltype' AND record_cycle_code = '$cyclecode' AND (record_pud = '$newDateUpdate' OR record_pud = '$newDateUpdate1') AND record_status_status='1'";
+									    $sql_check_record_count = "SELECT id FROM ppbms_record WHERE messenger_id = '$recordidview' AND record_sender = '$sender' AND record_deltype = '$deltype' AND record_cycle_code = '$cyclecode' AND (record_pud = '$newDateUpdate' OR record_pud = '$newDateUpdate1' OR record_pud = '$newDateUpdate2' OR record_pud = '$newDateUpdate3') AND record_status_status='1'";
 									    $query_check_record_count = mysqli_query($db_conn, $sql_check_record_count);
 									    $record_count = mysqli_num_rows($query_check_record_count);
 

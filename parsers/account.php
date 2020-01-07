@@ -290,6 +290,8 @@ if(isset($_POST["adddispatchcontroldatamessengerid"])) {
   $newDate1 = date("Y-m-d H:i:s", strtotime($date));
   $newDate2 = date("m/d/y", strtotime($date));
   $newDate3 = date("n/j/y", strtotime($date));
+  $newDate4 = date("m/d/Y", strtotime($date));
+  $newDate5 = date("n/j/Y", strtotime($date));
   $sender = $_POST['adddispatchcontroldatasender'];
   $deltype = $_POST['adddispatchcontroldatadeltype'];
 
@@ -297,7 +299,7 @@ if(isset($_POST["adddispatchcontroldatamessengerid"])) {
   $query = mysqli_query($db_conn, $sql);
   $check = mysqli_num_rows($query);
 
-  $sql_cycle_code = "SELECT id FROM ppbms_record WHERE record_cycle_code='$cyclecode' AND (record_pud='$newDate2' OR record_pud='$newDate3') AND record_sender='$sender' AND record_deltype='$deltype' LIMIT 1";
+  $sql_cycle_code = "SELECT id FROM ppbms_record WHERE record_cycle_code='$cyclecode' AND (record_pud='$newDate2' OR record_pud='$newDate3' OR record_pud='$newDate4' OR record_pud='$newDate5') AND record_sender='$sender' AND record_deltype='$deltype' LIMIT 1";
   $query_cycle_code = mysqli_query($db_conn, $sql_cycle_code);
   $check_cycle_code = mysqli_num_rows($query_cycle_code);
 
