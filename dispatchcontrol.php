@@ -244,8 +244,10 @@ if(isset($_GET["messengerid"])){
           $deltype1 = $row["dispatch_control_data_del_type"];
           $newPUD1 = date("m/d/y", strtotime($pickupdate1));
           $newPUD12 = date("n/j/y", strtotime($pickupdate1));
+          $newPUD13 = date("m/d/Y", strtotime($pickupdate1));
+          $newPUD14 = date("n/j/Y", strtotime($pickupdate1));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender1' AND record_deltype = '$deltype1' AND (record_pud = '$newPUD1' OR record_pud = '$newPUD12') AND record_cycle_code = '$cyclecode1' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender1' AND record_deltype = '$deltype1' AND (record_pud = '$newPUD1' OR record_pud = '$newPUD12' OR record_pud = '$newPUD13' OR record_pud = '$newPUD14') AND record_cycle_code = '$cyclecode1' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty1 = mysqli_num_rows($query_check_record_receive);
@@ -259,8 +261,10 @@ if(isset($_GET["messengerid"])){
           $deltype2 = $row["dispatch_control_data_del_type"];
           $newPUD2 = date("m/d/y", strtotime($pickupdate2));
           $newPUD22 = date("n/j/y", strtotime($pickupdate2));
+          $newPUD23 = date("m/d/Y", strtotime($pickupdate2));
+          $newPUD24 = date("n/j/Y", strtotime($pickupdate2));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender2' AND record_deltype = '$deltype2' AND (record_pud = '$newPUD2' OR record_pud = '$newPUD22') AND record_cycle_code = '$cyclecode2' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender2' AND record_deltype = '$deltype2' AND (record_pud = '$newPUD2' OR record_pud = '$newPUD22' OR record_pud = '$newPUD23' OR record_pud = '$newPUD24') AND record_cycle_code = '$cyclecode2' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty2 = mysqli_num_rows($query_check_record_receive);
@@ -274,8 +278,10 @@ if(isset($_GET["messengerid"])){
           $deltype3 = $row["dispatch_control_data_del_type"];
           $newPUD3 = date("m/d/y", strtotime($pickupdate3));
           $newPUD32 = date("n/j/y", strtotime($pickupdate3));
+          $newPUD33 = date("m/d/Y", strtotime($pickupdate3));
+          $newPUD34 = date("n/j/Y", strtotime($pickupdate3));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender3' AND record_deltype = '$deltype3' AND (record_pud = '$newPUD3' OR record_pud = '$newPUD32') AND record_cycle_code = '$cyclecode3' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender3' AND record_deltype = '$deltype3' AND (record_pud = '$newPUD3' OR record_pud = '$newPUD32' OR record_pud = '$newPUD33' OR record_pud = '$newPUD34') AND record_cycle_code = '$cyclecode3' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
          if($query_check_record_receive) {
             $qty3 = mysqli_num_rows($query_check_record_receive);
@@ -289,8 +295,10 @@ if(isset($_GET["messengerid"])){
           $deltype4 = $row["dispatch_control_data_del_type"];
           $newPUD4 = date("m/d/y", strtotime($pickupdate4));
           $newPUD42 = date("n/j/y", strtotime($pickupdate4));
+          $newPUD43 = date("m/d/Y", strtotime($pickupdate4));
+          $newPUD44 = date("n/j/Y", strtotime($pickupdate4));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender4' AND record_deltype = '$deltype4' AND (record_pud = '$newPUD4' OR record_pud = '$newPUD42') AND record_cycle_code = '$cyclecode4' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender4' AND record_deltype = '$deltype4' AND (record_pud = '$newPUD4' OR record_pud = '$newPUD42' OR record_pud = '$newPUD43' OR record_pud = '$newPUD44') AND record_cycle_code = '$cyclecode4' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty4 = mysqli_num_rows($query_check_record_receive);
@@ -304,8 +312,10 @@ if(isset($_GET["messengerid"])){
           $deltype5 = $row["dispatch_control_data_del_type"];
           $newPUD5 = date("m/d/y", strtotime($pickupdate5));
           $newPUD52 = date("n/j/y", strtotime($pickupdate5));
+          $newPUD53 = date("n/j/Y", strtotime($pickupdate5));
+          $newPUD54 = date("n/j/Y", strtotime($pickupdate5));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender5' AND record_deltype = '$deltype5' AND (record_pud = '$newPUD5' OR record_pud = '$newPUD52') AND record_cycle_code = '$cyclecode5' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender5' AND record_deltype = '$deltype5' AND (record_pud = '$newPUD5' OR record_pud = '$newPUD52' OR record_pud = '$newPUD53' OR record_pud = '$newPUD54') AND record_cycle_code = '$cyclecode5' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty5 = mysqli_num_rows($query_check_record_receive);
@@ -319,8 +329,10 @@ if(isset($_GET["messengerid"])){
           $deltype6 = $row["dispatch_control_data_del_type"];
           $newPUD6 = date("m/d/y", strtotime($pickupdate6));
           $newPUD62 = date("n/j/y", strtotime($pickupdate6));
+          $newPUD63 = date("n/j/Y", strtotime($pickupdate6));
+          $newPUD64 = date("n/j/Y", strtotime($pickupdate6));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender6' AND record_deltype = '$deltype6' AND (record_pud = '$newPUD6' OR record_pud = '$newPUD62') AND record_cycle_code = '$cyclecode6' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender6' AND record_deltype = '$deltype6' AND (record_pud = '$newPUD6' OR record_pud = '$newPUD62' OR record_pud = '$newPUD63' OR record_pud = '$newPUD64') AND record_cycle_code = '$cyclecode6' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty6 = mysqli_num_rows($query_check_record_receive);
@@ -334,8 +346,10 @@ if(isset($_GET["messengerid"])){
           $deltype7 = $row["dispatch_control_data_del_type"];
           $newPUD7 = date("m/d/y", strtotime($pickupdate7));
           $newPUD72 = date("n/j/y", strtotime($pickupdate7));
+          $newPUD73 = date("n/j/Y", strtotime($pickupdate7));
+          $newPUD74 = date("n/j/Y", strtotime($pickupdate7));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender7' AND record_deltype = '$deltype7' AND (record_pud = '$newPUD7' OR record_pud = '$newPUD72') AND record_cycle_code = '$cyclecode7' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender7' AND record_deltype = '$deltype7' AND (record_pud = '$newPUD7' OR record_pud = '$newPUD72' OR record_pud = '$newPUD73' OR record_pud = '$newPUD74') AND record_cycle_code = '$cyclecode7' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty7 = mysqli_num_rows($query_check_record_receive);
@@ -348,8 +362,10 @@ if(isset($_GET["messengerid"])){
           $deltype8 = $row["dispatch_control_data_del_type"];
           $newPUD8 = date("m/d/y", strtotime($pickupdate8));
           $newPUD82 = date("n/j/y", strtotime($pickupdate8));
+          $newPUD83 = date("n/j/Y", strtotime($pickupdate8));
+          $newPUD84 = date("n/j/Y", strtotime($pickupdate8));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender8' AND record_deltype = '$deltype8' AND (record_pud = '$newPUD8' OR record_pud = '$newPUD82') AND record_cycle_code = '$cyclecode8' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender8' AND record_deltype = '$deltype8' AND (record_pud = '$newPUD8' OR record_pud = '$newPUD82' OR record_pud = '$newPUD83' OR record_pud = '$newPUD84') AND record_cycle_code = '$cyclecode8' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty8 = mysqli_num_rows($query_check_record_receive);
@@ -362,8 +378,10 @@ if(isset($_GET["messengerid"])){
           $deltype9 = $row["dispatch_control_data_del_type"];
           $newPUD9 = date("m/d/y", strtotime($pickupdate9));
           $newPUD92 = date("n/j/y", strtotime($pickupdate9));
+          $newPUD93 = date("n/j/Y", strtotime($pickupdate9));
+          $newPUD94 = date("n/j/Y", strtotime($pickupdate9));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender9' AND record_deltype = '$deltype9' AND (record_pud = '$newPUD9' OR record_pud = '$newPUD92') AND record_cycle_code = '$cyclecode9' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender9' AND record_deltype = '$deltype9' AND (record_pud = '$newPUD9' OR record_pud = '$newPUD92' OR record_pud = '$newPUD93' OR record_pud = '$newPUD94') AND record_cycle_code = '$cyclecode9' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty9 = mysqli_num_rows($query_check_record_receive);
@@ -377,8 +395,10 @@ if(isset($_GET["messengerid"])){
           $deltype10 = $row["dispatch_control_data_del_type"];
           $newPUD10 = date("m/d/y", strtotime($pickupdate10));
           $newPUD102 = date("n/j/y", strtotime($pickupdate10));
+          $newPUD103 = date("n/j/Y", strtotime($pickupdate10));
+          $newPUD104 = date("n/j/Y", strtotime($pickupdate10));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender10' AND record_deltype = '$deltype10' AND (record_pud = '$newPUD10' OR record_pud = '$newPUD102') AND record_cycle_code = '$cyclecode10' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender10' AND record_deltype = '$deltype10' AND (record_pud = '$newPUD10' OR record_pud = '$newPUD102' OR record_pud = '$newPUD103' OR record_pud = '$newPUD104') AND record_cycle_code = '$cyclecode10' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty10 = mysqli_num_rows($query_check_record_receive);
@@ -392,8 +412,10 @@ if(isset($_GET["messengerid"])){
           $deltype11 = $row["dispatch_control_data_del_type"];
           $newPUD11 = date("m/d/y", strtotime($pickupdate11));
           $newPUD112 = date("n/j/y", strtotime($pickupdate11));
+          $newPUD113 = date("n/j/Y", strtotime($pickupdate11));
+          $newPUD114 = date("n/j/Y", strtotime($pickupdate11));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender11' AND record_deltype = '$deltype11' AND (record_pud = '$newPUD11' OR record_pud = '$newPUD112') AND record_cycle_code = '$cyclecode11' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender11' AND record_deltype = '$deltype11' AND (record_pud = '$newPUD11' OR record_pud = '$newPUD112' OR record_pud = '$newPUD113' OR record_pud = '$newPUD114') AND record_cycle_code = '$cyclecode11' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty11 = mysqli_num_rows($query_check_record_receive);
@@ -407,8 +429,10 @@ if(isset($_GET["messengerid"])){
           $deltype12 = $row["dispatch_control_data_del_type"];
           $newPUD12 = date("m/d/y", strtotime($pickupdate12));
           $newPUD122 = date("n/j/y", strtotime($pickupdate12));
+          $newPUD123 = date("n/j/Y", strtotime($pickupdate12));
+          $newPUD124 = date("n/j/Y", strtotime($pickupdate12));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender12' AND record_deltype = '$deltype12' AND (record_pud = '$newPUD12' OR record_pud = '$newPUD122') AND record_cycle_code = '$cyclecode12' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender12' AND record_deltype = '$deltype12' AND (record_pud = '$newPUD12' OR record_pud = '$newPUD122' OR record_pud = '$newPUD123' OR record_pud = '$newPUD124') AND record_cycle_code = '$cyclecode12' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty12 = mysqli_num_rows($query_check_record_receive);
@@ -422,8 +446,10 @@ if(isset($_GET["messengerid"])){
           $deltype13 = $row["dispatch_control_data_del_type"];
           $newPUD13 = date("m/d/y", strtotime($pickupdate13));
           $newPUD132 = date("n/j/y", strtotime($pickupdate13));
+          $newPUD133 = date("n/j/Y", strtotime($pickupdate13));
+          $newPUD134 = date("n/j/Y", strtotime($pickupdate13));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender13' AND record_deltype = '$deltype13' AND (record_pud = '$newPUD13' OR record_pud = '$newPUD132') AND record_cycle_code = '$cyclecode13' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender13' AND record_deltype = '$deltype13' AND (record_pud = '$newPUD13' OR record_pud = '$newPUD132' OR record_pud = '$newPUD133' OR record_pud = '$newPUD134') AND record_cycle_code = '$cyclecode13' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty13 = mysqli_num_rows($query_check_record_receive);
@@ -437,8 +463,10 @@ if(isset($_GET["messengerid"])){
           $deltype14 = $row["dispatch_control_data_del_type"];
           $newPUD14 = date("m/d/y", strtotime($pickupdate14));
           $newPUD142 = date("n/j/y", strtotime($pickupdate14));
+          $newPUD143 = date("n/j/Y", strtotime($pickupdate14));
+          $newPUD144 = date("n/j/Y", strtotime($pickupdate14));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender14' AND record_deltype = '$deltype14' AND (record_pud = '$newPUD14' OR record_pud = '$newPUD142') AND record_cycle_code = '$cyclecode14' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender14' AND record_deltype = '$deltype14' AND (record_pud = '$newPUD14' OR record_pud = '$newPUD142' OR record_pud = '$newPUD143' OR record_pud = '$newPUD144') AND record_cycle_code = '$cyclecode14' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty14 = mysqli_num_rows($query_check_record_receive);
@@ -452,8 +480,10 @@ if(isset($_GET["messengerid"])){
           $deltype15 = $row["dispatch_control_data_del_type"];
           $newPUD15 = date("m/d/y", strtotime($pickupdate15));
           $newPUD152 = date("n/j/y", strtotime($pickupdate15));
+          $newPUD153 = date("n/j/Y", strtotime($pickupdate15));
+          $newPUD154 = date("n/j/Y", strtotime($pickupdate15));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender15' AND record_deltype = '$deltype15' AND (record_pud = '$newPUD15' OR record_pud = '$newPUD152') AND record_cycle_code = '$cyclecode15' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender15' AND record_deltype = '$deltype15' AND (record_pud = '$newPUD15' OR record_pud = '$newPUD152' OR record_pud = '$newPUD153' OR record_pud = '$newPUD154') AND record_cycle_code = '$cyclecode15' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty15 = mysqli_num_rows($query_check_record_receive);
@@ -467,8 +497,10 @@ if(isset($_GET["messengerid"])){
           $deltype16 = $row["dispatch_control_data_del_type"];
           $newPUD16 = date("m/d/y", strtotime($pickupdate16));
           $newPUD162 = date("n/j/y", strtotime($pickupdate16));
+          $newPUD163 = date("n/j/Y", strtotime($pickupdate16));
+          $newPUD164 = date("n/j/Y", strtotime($pickupdate16));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender16' AND record_deltype = '$deltype16' AND (record_pud = '$newPUD16' OR record_pud = '$newPUD162') AND record_cycle_code = '$cyclecode16' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender16' AND record_deltype = '$deltype16' AND (record_pud = '$newPUD16' OR record_pud = '$newPUD162' OR record_pud = '$newPUD163' OR record_pud = '$newPUD164') AND record_cycle_code = '$cyclecode16' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty16 = mysqli_num_rows($query_check_record_receive);
@@ -482,8 +514,10 @@ if(isset($_GET["messengerid"])){
           $deltype17 = $row["dispatch_control_data_del_type"];
           $newPUD17 = date("m/d/y", strtotime($pickupdate17));
           $newPUD172 = date("n/j/y", strtotime($pickupdate17));
+          $newPUD173 = date("n/j/Y", strtotime($pickupdate17));
+          $newPUD174 = date("n/j/Y", strtotime($pickupdate17));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender17' AND record_deltype = '$deltype17' AND (record_pud = '$newPUD17' OR record_pud = '$newPUD172') AND record_cycle_code = '$cyclecode17' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender17' AND record_deltype = '$deltype17' AND (record_pud = '$newPUD17' OR record_pud = '$newPUD172' OR record_pud = '$newPUD173' OR record_pud = '$newPUD174') AND record_cycle_code = '$cyclecode17' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty17 = mysqli_num_rows($query_check_record_receive);
@@ -497,8 +531,10 @@ if(isset($_GET["messengerid"])){
           $deltype18 = $row["dispatch_control_data_del_type"];
           $newPUD18 = date("m/d/y", strtotime($pickupdate18));
           $newPUD182 = date("n/j/y", strtotime($pickupdate18));
+          $newPUD183 = date("n/j/Y", strtotime($pickupdate18));
+          $newPUD184 = date("n/j/Y", strtotime($pickupdate18));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender18' AND record_deltype = '$deltype18' AND (record_pud = '$newPUD18' OR record_pud = '$newPUD182') AND record_cycle_code = '$cyclecode18' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender18' AND record_deltype = '$deltype18' AND (record_pud = '$newPUD18' OR record_pud = '$newPUD182' OR record_pud = '$newPUD183' OR record_pud = '$newPUD184') AND record_cycle_code = '$cyclecode18' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty18 = mysqli_num_rows($query_check_record_receive);
@@ -512,8 +548,10 @@ if(isset($_GET["messengerid"])){
           $deltype19 = $row["dispatch_control_data_del_type"];
           $newPUD19 = date("m/d/y", strtotime($pickupdate19));
           $newPUD192 = date("n/j/y", strtotime($pickupdate19));
+          $newPUD193 = date("n/j/Y", strtotime($pickupdate19));
+          $newPUD194 = date("n/j/Y", strtotime($pickupdate19));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender19' AND record_deltype = '$deltype19' AND (record_pud = '$newPUD19' OR record_pud = '$newPUD192') AND record_cycle_code = '$cyclecode19' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender19' AND record_deltype = '$deltype19' AND (record_pud = '$newPUD19' OR record_pud = '$newPUD192' OR record_pud = '$newPUD193' OR record_pud = '$newPUD194') AND record_cycle_code = '$cyclecode19' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty19 = mysqli_num_rows($query_check_record_receive);
@@ -527,8 +565,10 @@ if(isset($_GET["messengerid"])){
           $deltype20 = $row["dispatch_control_data_del_type"];
           $newPUD20 = date("m/d/y", strtotime($pickupdate20));
           $newPUD202 = date("n/j/y", strtotime($pickupdate20));
+          $newPUD203 = date("n/j/Y", strtotime($pickupdate20));
+          $newPUD204 = date("n/j/Y", strtotime($pickupdate20));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender20' AND record_deltype = '$deltype20' AND (record_pud = '$newPUD20' OR record_pud = '$newPUD202') AND record_cycle_code = '$cyclecode20' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender20' AND record_deltype = '$deltype20' AND (record_pud = '$newPUD20' OR record_pud = '$newPUD202' OR record_pud = '$newPUD203' OR record_pud = '$newPUD204') AND record_cycle_code = '$cyclecode20' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty20 = mysqli_num_rows($query_check_record_receive);
@@ -542,8 +582,10 @@ if(isset($_GET["messengerid"])){
           $deltype21 = $row["dispatch_control_data_del_type"];
           $newPUD21 = date("m/d/y", strtotime($pickupdate21));
           $newPUD212 = date("n/j/y", strtotime($pickupdate21));
+          $newPUD213 = date("n/j/Y", strtotime($pickupdate21));
+          $newPUD214 = date("n/j/Y", strtotime($pickupdate21));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender21' AND record_deltype = '$deltype21' AND (record_pud = '$newPUD21' OR record_pud = '$newPUD212') AND record_cycle_code = '$cyclecode21' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender21' AND record_deltype = '$deltype21' AND (record_pud = '$newPUD21' OR record_pud = '$newPUD212' OR record_pud = '$newPUD213' OR record_pud = '$newPUD214') AND record_cycle_code = '$cyclecode21' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty21 = mysqli_num_rows($query_check_record_receive);
@@ -557,8 +599,10 @@ if(isset($_GET["messengerid"])){
           $deltype22 = $row["dispatch_control_data_del_type"];
           $newPUD22 = date("m/d/y", strtotime($pickupdate22));
           $newPUD222 = date("n/j/y", strtotime($pickupdate22));
+          $newPUD223 = date("n/j/Y", strtotime($pickupdate22));
+          $newPUD224 = date("n/j/Y", strtotime($pickupdate22));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender22' AND record_deltype = '$deltype22' AND (record_pud = '$newPUD22' OR record_pud = '$newPUD222') AND record_cycle_code = '$cyclecode22' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender22' AND record_deltype = '$deltype22' AND (record_pud = '$newPUD22' OR record_pud = '$newPUD222' OR record_pud = '$newPUD223' OR record_pud = '$newPUD224') AND record_cycle_code = '$cyclecode22' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty22 = mysqli_num_rows($query_check_record_receive);
@@ -572,8 +616,10 @@ if(isset($_GET["messengerid"])){
           $deltype23 = $row["dispatch_control_data_del_type"];
           $newPUD23 = date("m/d/y", strtotime($pickupdate23));
           $newPUD232 = date("n/j/y", strtotime($pickupdate23));
+          $newPUD233 = date("n/j/Y", strtotime($pickupdate23));
+          $newPUD234 = date("n/j/Y", strtotime($pickupdate23));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender23' AND record_deltype = '$deltype23' AND (record_pud = '$newPUD23' OR record_pud = '$newPUD232') AND record_cycle_code = '$cyclecode23' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender23' AND record_deltype = '$deltype23' AND (record_pud = '$newPUD23' OR record_pud = '$newPUD232' OR record_pud = '$newPUD233' OR record_pud = '$newPUD234') AND record_cycle_code = '$cyclecode23' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty23 = mysqli_num_rows($query_check_record_receive);
@@ -587,8 +633,10 @@ if(isset($_GET["messengerid"])){
           $deltype24 = $row["dispatch_control_data_del_type"];
           $newPUD24 = date("m/d/y", strtotime($pickupdate24));
           $newPUD242 = date("n/j/y", strtotime($pickupdate24));
+          $newPUD243 = date("n/j/Y", strtotime($pickupdate24));
+          $newPUD244 = date("n/j/Y", strtotime($pickupdate24));
 
-          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender24' AND record_deltype = '$deltype24' AND (record_pud = '$newPUD24' OR record_pud = '$newPUD242') AND record_cycle_code = '$cyclecode24' AND messenger_id = '$messengerid' AND record_status_status = '1'";
+          $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE record_sender = '$sender24' AND record_deltype = '$deltype24' AND (record_pud = '$newPUD24' OR record_pud = '$newPUD242' OR record_pud = '$newPUD243' OR record_pud = '$newPUD244') AND record_cycle_code = '$cyclecode24' AND messenger_id = '$messengerid' AND record_status_status = '1'";
           $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
           if($query_check_record_receive) {
             $qty24 = mysqli_num_rows($query_check_record_receive);

@@ -1282,11 +1282,11 @@ if(
 									    $query_check_record_count = mysqli_query($db_conn, $sql_check_record_count);
 									    $record_count = mysqli_num_rows($query_check_record_count);
 
-									    $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE messenger_id = '$recordidview' AND record_sender = '$sender' AND record_deltype = '$deltype' AND record_cycle_code = '$cyclecode' AND record_status != '' AND (record_pud = '$newDateUpdate' OR record_pud = '$newDateUpdate1') AND record_status_status='1'";
+									    $sql_check_record_receive = "SELECT id FROM ppbms_record WHERE messenger_id = '$recordidview' AND record_sender = '$sender' AND record_deltype = '$deltype' AND record_cycle_code = '$cyclecode' AND record_status != '' AND (record_pud = '$newDateUpdate' OR record_pud = '$newDateUpdate1' OR record_pud = '$newDateUpdate2' OR record_pud = '$newDateUpdate3') AND record_status_status='1'";
 									    $query_check_record_receive = mysqli_query($db_conn, $sql_check_record_receive);
 									    $record_count_received = mysqli_num_rows($query_check_record_receive);
 
-									    $sql_check_record_not_receive = "SELECT id FROM ppbms_record WHERE messenger_id = '$recordidview' AND record_sender = '$sender' AND record_deltype = '$deltype' AND record_cycle_code = '$cyclecode' AND record_status = '' AND (record_pud = '$newDateUpdate' OR record_pud = '$newDateUpdate1') AND record_status_status='1'";
+									    $sql_check_record_not_receive = "SELECT id FROM ppbms_record WHERE messenger_id = '$recordidview' AND record_sender = '$sender' AND record_deltype = '$deltype' AND record_cycle_code = '$cyclecode' AND record_status = '' AND (record_pud = '$newDateUpdate' OR record_pud = '$newDateUpdate1' OR record_pud = '$newDateUpdate2' OR record_pud = '$newDateUpdate3') AND record_status_status='1'";
 									    $query_check_record_not_receive = mysqli_query($db_conn, $sql_check_record_not_receive);
 									    $record_count_not_receive = mysqli_num_rows($query_check_record_not_receive);
 
