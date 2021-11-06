@@ -719,12 +719,8 @@ for($i=0; $i<$countSummary; $i++) {
           $remarks = isset($row["record_remarks"]) ? $row['record_remarks'] : '';
           $datereported = isset($row["record_date_reported"]) ? $row['record_date_reported'] : '';
 
-          if($datereceive == "0000-00-00 00:00:00" || $status == "RTS") {
-            $datereceive = "";
-          } else {
-            $datereceive = date("m/d/Y", strtotime($datereceive));
-          }
-
+          $datereceive = date("m/d/Y", strtotime($datereceive));
+          
           if($datereported == "0000-00-00 00:00:00") {
             $datereported = "";
           } else {
