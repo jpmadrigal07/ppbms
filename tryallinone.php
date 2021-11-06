@@ -230,9 +230,9 @@ $excel -> setActiveSheetIndex(0)
         -> setRGB('00b050');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('E1','Month')
+        -> setCellValue('E1','AGING')
         -> getStyle('E1')
-        -> applyFromArray($topHeaderStyleFontBlackBoldCalibri);
+        -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
 
 $excel -> setActiveSheetIndex(0) 
         -> getStyle('E1')
@@ -240,38 +240,33 @@ $excel -> setActiveSheetIndex(0)
 
 $excel -> setActiveSheetIndex(0) 
         -> getStyle('E1')
+        -> applyFromArray($border);
+
+$excel -> setActiveSheetIndex(0) 
+        -> getStyle('E1')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('00b050');
+
+        $excel -> setActiveSheetIndex(0) 
+        -> setCellValue('F1','Month')
+        -> getStyle('F1')
+        -> applyFromArray($topHeaderStyleFontBlackBoldCalibri);
+
+$excel -> setActiveSheetIndex(0) 
+        -> getStyle('F1')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(0) 
+        -> getStyle('F1')
         -> getFill()
         -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
         -> getStartColor()
         -> setRGB('ffff00');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('F1',"JOB#")
-        -> getStyle('F1')
-        -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
-
-$excel -> setActiveSheetIndex(0) 
-        -> getStyle('F1')
-        -> applyFromArray($centerText);
-
-$excel -> setActiveSheetIndex(0) 
-        -> getStyle('F1')
-        -> applyFromArray($border);
-
-$excel -> setActiveSheetIndex(0) 
-        -> getStyle('F1')
-        -> getAlignment()
-        -> setWrapText(true);
-
-$excel -> setActiveSheetIndex(0) 
-        -> getStyle('F1')
-        -> getFill()
-        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
-        -> getStartColor()
-        -> setRGB('00b050');
-
-$excel -> setActiveSheetIndex(0) 
-        -> setCellValue('G1',"Checklist For PPB")
+        -> setCellValue('G1',"JOB#")
         -> getStyle('G1')
         -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
 
@@ -296,7 +291,7 @@ $excel -> setActiveSheetIndex(0)
         -> setRGB('00b050');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('H1',"File Name")
+        -> setCellValue('H1',"Checklist For PPB")
         -> getStyle('H1')
         -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
 
@@ -321,7 +316,7 @@ $excel -> setActiveSheetIndex(0)
         -> setRGB('00b050');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('I1',"seq no.")
+        -> setCellValue('I1',"File Name")
         -> getStyle('I1')
         -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
 
@@ -346,7 +341,7 @@ $excel -> setActiveSheetIndex(0)
         -> setRGB('00b050');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('J1','CYCLECODE')
+        -> setCellValue('J1',"seq no.")
         -> getStyle('J1')
         -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
 
@@ -360,49 +355,54 @@ $excel -> setActiveSheetIndex(0)
 
 $excel -> setActiveSheetIndex(0) 
         -> getStyle('J1')
+        -> getAlignment()
+        -> setWrapText(true);
+
+$excel -> setActiveSheetIndex(0) 
+        -> getStyle('J1')
         -> getFill()
         -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
         -> getStartColor()
         -> setRGB('00b050');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('K1','Qty')
+        -> setCellValue('K1','CYCLECODE')
         -> getStyle('K1')
+        -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
+
+$excel -> setActiveSheetIndex(0) 
+        -> getStyle('K1')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(0) 
+        -> getStyle('K1')
+        -> applyFromArray($border);
+
+$excel -> setActiveSheetIndex(0) 
+        -> getStyle('K1')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('00b050');
+
+$excel -> setActiveSheetIndex(0) 
+        -> setCellValue('L1','Qty')
+        -> getStyle('L1')
         -> applyFromArray($topHeaderStyleFontBlackBoldCalibri);
 
 $excel -> setActiveSheetIndex(0) 
-        -> getStyle('K1')
+        -> getStyle('L1')
         -> applyFromArray($centerText);
 
 $excel -> setActiveSheetIndex(0) 
-        -> getStyle('K1')
+        -> getStyle('L1')
         -> getFill()
         -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
         -> getStartColor()
         -> setRGB('ffff00');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('L1','ADDRESS')
-        -> getStyle('L1')
-        -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
-
-$excel -> setActiveSheetIndex(0) 
-        -> getStyle('L1')
-        -> applyFromArray($centerText);
-
-$excel -> setActiveSheetIndex(0) 
-        -> getStyle('L1')
-        -> applyFromArray($border);
-
-$excel -> setActiveSheetIndex(0) 
-        -> getStyle('L1')
-        -> getFill()
-        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
-        -> getStartColor()
-        -> setRGB('00b050');
-
-$excel -> setActiveSheetIndex(0) 
-        -> setCellValue('M1','AREA')
+        -> setCellValue('M1','ADDRESS')
         -> getStyle('M1')
         -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
 
@@ -422,7 +422,7 @@ $excel -> setActiveSheetIndex(0)
         -> setRGB('00b050');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('N1','SUBSCRIBERS NAME')
+        -> setCellValue('N1','AREA')
         -> getStyle('N1')
         -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
 
@@ -442,7 +442,7 @@ $excel -> setActiveSheetIndex(0)
         -> setRGB('00b050');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('O1','BARCODE')
+        -> setCellValue('O1','SUBSCRIBERS NAME')
         -> getStyle('O1')
         -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
 
@@ -462,7 +462,7 @@ $excel -> setActiveSheetIndex(0)
         -> setRGB('00b050');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('P1','ACCT NO')
+        -> setCellValue('P1','BARCODE')
         -> getStyle('P1')
         -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
 
@@ -482,7 +482,7 @@ $excel -> setActiveSheetIndex(0)
         -> setRGB('00b050');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('Q1','DATE RECEIVED')
+        -> setCellValue('Q1','ACCT NO')
         -> getStyle('Q1')
         -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
 
@@ -502,7 +502,7 @@ $excel -> setActiveSheetIndex(0)
         -> setRGB('00b050');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('R1','RECEIVED BY')
+        -> setCellValue('R1','DATE RECEIVED')
         -> getStyle('R1')
         -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
 
@@ -522,7 +522,7 @@ $excel -> setActiveSheetIndex(0)
         -> setRGB('00b050');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('S1','RELATION')
+        -> setCellValue('S1','RECEIVED BY')
         -> getStyle('S1')
         -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
 
@@ -542,7 +542,7 @@ $excel -> setActiveSheetIndex(0)
         -> setRGB('00b050');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('T1','MESSENGER')
+        -> setCellValue('T1','RELATION')
         -> getStyle('T1')
         -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
 
@@ -562,7 +562,7 @@ $excel -> setActiveSheetIndex(0)
         -> setRGB('00b050');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('U1','STATUS')
+        -> setCellValue('U1','MESSENGER')
         -> getStyle('U1')
         -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
 
@@ -582,56 +582,76 @@ $excel -> setActiveSheetIndex(0)
         -> setRGB('00b050');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('V1','Reason for RTS')
+        -> setCellValue('V1','STATUS')
         -> getStyle('V1')
+        -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
+
+$excel -> setActiveSheetIndex(0) 
+        -> getStyle('V1')
+        -> applyFromArray($centerText);
+
+$excel -> setActiveSheetIndex(0) 
+        -> getStyle('V1')
+        -> applyFromArray($border);
+
+$excel -> setActiveSheetIndex(0) 
+        -> getStyle('V1')
+        -> getFill()
+        -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        -> getStartColor()
+        -> setRGB('00b050');
+
+$excel -> setActiveSheetIndex(0) 
+        -> setCellValue('W1','Reason for RTS')
+        -> getStyle('W1')
         -> applyFromArray($topHeaderStyleFontBlackBoldCalibri);
 
 $excel -> setActiveSheetIndex(0) 
-        -> getStyle('V1')
+        -> getStyle('W1')
         -> applyFromArray($centerText);
 
 $excel -> setActiveSheetIndex(0) 
-        -> getStyle('V1')
+        -> getStyle('W1')
         -> getFill()
         -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
         -> getStartColor()
         -> setRGB('ffff00');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('W1','Remarks')
-        -> getStyle('W1')
+        -> setCellValue('X1','Remarks')
+        -> getStyle('X1')
         -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
 
 $excel -> setActiveSheetIndex(0) 
-        -> getStyle('W1')
+        -> getStyle('X1')
         -> applyFromArray($centerText);
 
 $excel -> setActiveSheetIndex(0) 
-        -> getStyle('W1')
+        -> getStyle('X1')
         -> applyFromArray($border);
 
 $excel -> setActiveSheetIndex(0) 
-        -> getStyle('W1')
+        -> getStyle('X1')
         -> getFill()
         -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
         -> getStartColor()
         -> setRGB('00b050');
 
 $excel -> setActiveSheetIndex(0) 
-        -> setCellValue('X1','Date Reported')
-        -> getStyle('X1')
+        -> setCellValue('Y1','Date Reported')
+        -> getStyle('Y1')
         -> applyFromArray($tableHeaderStyleFontWhiteBoldCalibri);
 
 $excel -> setActiveSheetIndex(0) 
-        -> getStyle('X1')
+        -> getStyle('Y1')
         -> applyFromArray($centerText);
 
 $excel -> setActiveSheetIndex(0) 
-        -> getStyle('X1')
+        -> getStyle('Y1')
         -> applyFromArray($border);
 
 $excel -> setActiveSheetIndex(0) 
-        -> getStyle('X1')
+        -> getStyle('Y1')
         -> getFill()
         -> setFillType(PHPExcel_Style_Fill::FILL_SOLID)
         -> getStartColor()
@@ -639,29 +659,30 @@ $excel -> setActiveSheetIndex(0)
 
 $excel->setActiveSheetIndex(0)->getRowDimension('1')->setRowHeight(-1);
 $excel->setActiveSheetIndex(0)->getColumnDimension('A')->setWidth(9);
-$excel->setActiveSheetIndex(0)->getColumnDimension('B')->setWidth(9);
+$excel->setActiveSheetIndex(0)->getColumnDimension('B')->setWidth(15);
 $excel->setActiveSheetIndex(0)->getColumnDimension('C')->setWidth(16);
 $excel->setActiveSheetIndex(0)->getColumnDimension('D')->setWidth(9);
-$excel->setActiveSheetIndex(0)->getColumnDimension('E')->setWidth(11);
-$excel->setActiveSheetIndex(0)->getColumnDimension('F')->setWidth(10);
-$excel->setActiveSheetIndex(0)->getColumnDimension('G')->setWidth(13);
+$excel->setActiveSheetIndex(0)->getColumnDimension('E')->setWidth(9);
+$excel->setActiveSheetIndex(0)->getColumnDimension('F')->setWidth(11);
+$excel->setActiveSheetIndex(0)->getColumnDimension('G')->setWidth(10);
 $excel->setActiveSheetIndex(0)->getColumnDimension('H')->setWidth(13);
-$excel->setActiveSheetIndex(0)->getColumnDimension('I')->setWidth(10);
-$excel->setActiveSheetIndex(0)->getColumnDimension('J')->setWidth(12);
-$excel->setActiveSheetIndex(0)->getColumnDimension('K')->setWidth(9);
-$excel->setActiveSheetIndex(0)->getColumnDimension('L')->setWidth(70);
-$excel->setActiveSheetIndex(0)->getColumnDimension('M')->setWidth(12);
-$excel->setActiveSheetIndex(0)->getColumnDimension('N')->setWidth(40);
-$excel->setActiveSheetIndex(0)->getColumnDimension('O')->setWidth(20);
-$excel->setActiveSheetIndex(0)->getColumnDimension('P')->setWidth(13);
-$excel->setActiveSheetIndex(0)->getColumnDimension('Q')->setWidth(15);
-$excel->setActiveSheetIndex(0)->getColumnDimension('R')->setWidth(14);
-$excel->setActiveSheetIndex(0)->getColumnDimension('S')->setWidth(15);
-$excel->setActiveSheetIndex(0)->getColumnDimension('T')->setWidth(14);
-$excel->setActiveSheetIndex(0)->getColumnDimension('U')->setWidth(11);
-$excel->setActiveSheetIndex(0)->getColumnDimension('V')->setWidth(25);
-$excel->setActiveSheetIndex(0)->getColumnDimension('W')->setWidth(23);
-$excel->setActiveSheetIndex(0)->getColumnDimension('X')->setWidth(18);
+$excel->setActiveSheetIndex(0)->getColumnDimension('I')->setWidth(13);
+$excel->setActiveSheetIndex(0)->getColumnDimension('J')->setWidth(10);
+$excel->setActiveSheetIndex(0)->getColumnDimension('K')->setWidth(12);
+$excel->setActiveSheetIndex(0)->getColumnDimension('L')->setWidth(9);
+$excel->setActiveSheetIndex(0)->getColumnDimension('M')->setWidth(70);
+$excel->setActiveSheetIndex(0)->getColumnDimension('N')->setWidth(12);
+$excel->setActiveSheetIndex(0)->getColumnDimension('O')->setWidth(40);
+$excel->setActiveSheetIndex(0)->getColumnDimension('P')->setWidth(20);
+$excel->setActiveSheetIndex(0)->getColumnDimension('Q')->setWidth(13);
+$excel->setActiveSheetIndex(0)->getColumnDimension('R')->setWidth(15);
+$excel->setActiveSheetIndex(0)->getColumnDimension('S')->setWidth(14);
+$excel->setActiveSheetIndex(0)->getColumnDimension('T')->setWidth(15);
+$excel->setActiveSheetIndex(0)->getColumnDimension('U')->setWidth(14);
+$excel->setActiveSheetIndex(0)->getColumnDimension('V')->setWidth(11);
+$excel->setActiveSheetIndex(0)->getColumnDimension('W')->setWidth(25);
+$excel->setActiveSheetIndex(0)->getColumnDimension('X')->setWidth(23);
+$excel->setActiveSheetIndex(0)->getColumnDimension('Y')->setWidth(18);
 
 // DATA LOOP
 
@@ -720,6 +741,11 @@ for($i=0; $i<$countSummary; $i++) {
           $datereported = isset($row["record_date_reported"]) ? $row['record_date_reported'] : '';
 
           $datereceive = date("m/d/Y", strtotime($datereceive));
+
+          $date1 = new DateTime($pud);
+          $date2 = new DateTime($datereceive);
+          $interval = $date1->diff($date2);
+          $aging = $interval && $interval->d ? $interval->d : 0;
           
           if($datereported == "0000-00-00 00:00:00") {
             $datereported = "";
@@ -727,7 +753,7 @@ for($i=0; $i<$countSummary; $i++) {
             $datereported = date("m/d/Y", strtotime($datereported));
           }
 
-          $data=array($rec,$sender,$deltype,$pud,$month,$jobnum,$checklist,$filenamerecord,$seqnum,$cyclecode,$qty,$address,$area,$subs,$barcode,$acctnum,$datereceive,$receiveby,$relation,$messenger,$status,$reasonrts,$remarks,$datereported);
+          $data=array($rec,$sender,$deltype,$pud,$aging,$month,$jobnum,$checklist,$filenamerecord,$seqnum,$cyclecode,$qty,$address,$area,$subs,$barcode,$acctnum,$datereceive,$receiveby,$relation,$messenger,$status,$reasonrts,$remarks,$datereported);
           array_push($toInsert, $data);
 
         // $excel -> setActiveSheetIndex(0) 
