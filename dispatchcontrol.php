@@ -931,9 +931,9 @@ mysqli_close($db_conn);
                 <p><center>Please read the important reminder. Upon signing, it implies that you agreed the terms and condition</center></p>
             </div>
             <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-              <img src="img/ppbsignature.png" style="position: absolute; width: 200px; margin-left: 40px; margin-top: 85px;" />
+              <img src="img/arielsignature.png" style="position: absolute; width: 100px; margin-left: 85px; margin-top: 95px;" />
                 <p>Received by:<br><br> ____________________________________<center style="font-size: 13px; text-align: center;">SIGNATURE OVER PRINTED NAME/DATE</center></p><br>
-                <p>Noted:<br><center style="font-size: 16px; font-weight: bold;">PASTOR B. BENAVIDES</center><center style="font-size: 13px; padding: 0px;">PRESIDENT</center></p>
+                <p>Noted:<br><center style="font-size: 16px; font-weight: bold;">ARIEL V. VICENTE</center><center style="font-size: 13px; padding: 0px;">SUPERVISOR</center></p>
             </div>
          </div>
      </div>  
